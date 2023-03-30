@@ -21,6 +21,9 @@ TBD
     3. Bundle Paper submission package
 6. Vol-XXX/index.html
     1. Build index.html with Metadata
+7. Everything complete?
+8. Notify all authors to verify final submission packages (give them 1 week)
+9. [Submit to CEUR](https://ceur-ws.org/HOWTOSUBMIT.html)
 
 **[Avoid Top errors in submissions](https://ceur-ws.org/HOWTOSUBMIT.html#TOPERRORS)**
 
