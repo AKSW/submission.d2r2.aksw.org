@@ -26,9 +26,12 @@ TBD
 
 ## Pieces
 
+*These pieces need to be adjusted and put together, pathes do not match!*
+
 - Generate the CEUR Vol-XXX/index.html with Jekyll RDF: https://github.com/AKSW/ceur-jekyll-rdf
 - Generate the pre-filled agreement forms with the script in `agreement-form`
 - Build the paper sources with the Taskfile and dockerimage in `source-management`
+- Build the submission archives for CEUR with the Taskfile in `ceur-submission`
 
 
 ## Past Workshop(s)
