@@ -11,16 +11,16 @@ TBD
 2. Collect Paper Sources
 3. Verify Paper Metadata
 4. Agreement Forms
-  1. Determine corresponding author to sign agreement form
-  2. Generate Agreement forms
-  3. Upload signed Agreement forms
-  4. Bundle AGREEMENT submission package
+    1. Determine corresponding author to sign agreement form
+    2. Generate Agreement forms
+    3. Upload signed Agreement forms
+    4. Bundle AGREEMENT submission package
 5. Paper Bundle
-  1. Build papers from source
-  2. Verify Papers [Avoid Top errors in submissions](https://ceur-ws.org/HOWTOSUBMIT.html#TOPERRORS)
-  3. Bundle Paper submission package
+    1. Build papers from source
+    2. Verify Papers [Avoid Top errors in submissions](https://ceur-ws.org/HOWTOSUBMIT.html#TOPERRORS)
+    3. Bundle Paper submission package
 6. Vol-XXX/index.html
-  1. Build index.html with Metadata
+    1. Build index.html with Metadata
 
 **[Avoid Top errors in submissions](https://ceur-ws.org/HOWTOSUBMIT.html#TOPERRORS)**
 
