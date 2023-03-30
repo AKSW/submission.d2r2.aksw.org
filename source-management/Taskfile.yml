@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  origianl_submissions: ../D2R2_22_submissions_1805-9870_2022-11-30_1669817043
+  origianl_submissions: ../D2R2_23_submissions # downloaded from easychair
   submission_ids: 1805 2109 2547 2553 3784 6009 6761 7697 8771 9422 9870
     # sh: find . -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
   LATEX_IMAGE: latex-ceur:ubuntu
@@ -62,7 +62,7 @@ tasks:
       done
 
   submission:diff:
-    - diffpdf {{.submission_id}}/main.pdf {{.origianl_submissions}}/D2R222_paper_{{.submission_id}}.pdf
+    - diffpdf {{.submission_id}}/main.pdf {{.origianl_submissions}}/D2R223_paper_{{.submission_id}}.pdf
 
   submission:build:
     - |
