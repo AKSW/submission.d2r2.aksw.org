@@ -10,17 +10,17 @@ TBD
 1. Collect Paper Metadata
 2. Collect Paper Sources
 3. Verify Paper Metadata
-4. Agreement Forms
+4. Vol-XXX/index.html
+    1. Build index.html with Metadata (see https://github.com/AKSW/ceur-jekyll-rdf)
+5. Agreement Forms
     1. Determine corresponding author to sign agreement form
     2. Generate Agreement forms
-    3. Upload signed Agreement forms
+    3. Upload signed Agreement forms (to this repo)
     4. Bundle AGREEMENT submission package
-5. Paper Bundle
+6. Paper Bundle
     1. Build papers from source
     2. Verify Papers [Avoid Top errors in submissions](https://ceur-ws.org/HOWTOSUBMIT.html#TOPERRORS)
     3. Bundle Paper submission package
-6. Vol-XXX/index.html
-    1. Build index.html with Metadata
 7. Everything complete?
 8. Notify all authors to verify final submission packages (give them 1 week)
 9. [Submit to CEUR](https://ceur-ws.org/HOWTOSUBMIT.html)
