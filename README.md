@@ -27,7 +27,7 @@ TBD
 ## Pieces
 
 - Generate the CEUR Vol-XXX/index.html with Jekyll RDF: https://github.com/AKSW/ceur-jekyll-rdf
-- Generate the pre-filled agreement forms with the script in `agreementform`
+- Generate the pre-filled agreement forms with the script in `agreement-form`
 - Build the paper sources with the Taskfile and dockerimage in `source-management`
 
 
