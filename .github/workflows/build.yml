@@ -19,6 +19,8 @@ jobs:
       run: |
         cd source-management
         task build
+        cd ..
+        task compile
     - name: Upload the resulting artifacts 📡
       uses: actions/upload-artifact@v3
       with:
