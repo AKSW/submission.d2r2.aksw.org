@@ -7,10 +7,16 @@
 
 **For Authors**
 
-1. Create a new directory with the number of your easychair submission in `source-management`
-2. Add your paper sources to this directory
-3. The main tex file must be called `main.tex` if it does not, rename it.
-
+1. Sources
+  1. Create a new directory with the number of your easychair submission in `source-management`
+  2. Add your paper sources to this directory
+  3. The main tex file must be called `main.tex` if it does not, rename it.
+2. Metadata & agreement form
+  1. Create a new directory with the number of your easychair submission in `agreement-form`
+  2. Copy the `metadata.yml` file from `agreement-form` to your new directory and fill it with your data
+  3. TODO build the agreement form
+  4. TODO Download the agreement form
+  5. TODO Print, sign, scan, and upload the form. IMPORTANT it must be hand signed.
 
 ## Editorial Process
 
