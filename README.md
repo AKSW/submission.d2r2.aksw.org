@@ -5,6 +5,15 @@
 
 ## Submission Process
 
+**For Authors**
+
+1. Create a new directory with the number of your easychair submission in `source-management`
+2. Add your paper sources to this directory
+3. The main tex file must be called `main.tex` if it does not, rename it.
+
+
+## Editorial Process
+
 TBD
 
 1. Collect Paper Metadata
