@@ -2,7 +2,7 @@ version: '3'
 
 vars:
   origianl_submissions: ../D2R2_23_submissions # downloaded from easychair
-  submission_ids: 1805 2109 2547 2553 3784 6009 6761 7697 8771 9422 9870
+  submission_ids: 1 2 3 4 6 7 8 9 10 11 12
     # sh: find . -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
   LATEX_IMAGE: latex-ceur:ubuntu
 
@@ -16,68 +16,88 @@ tasks:
       - docker build -t {{.LATEX_IMAGE}} .
 
   build:
-    - |
-      for submission_id in {{.submission_ids}}
-      do
-        submission_id=$submission_id task submission:build || true
-      done
-    - task: submission:build
-      vars:
-        submission_id: Preface
+    desc: Batch build all submissions
+    cmds:
+      - |
+        for submission_id in {{.submission_ids}}
+        do
+          submission_id=$submission_id task submission:build || true
+        done
+      - task: submission:build
+        vars:
+          submission_id: Preface
 
   clean:
-    - |
-      for submission_id in {{.submission_ids}}
-      do
-        submission_id=$submission_id task submission:clean
-      done
-    - task: submission:clean
-      vars:
-        submission_id: Preface
+    desc: Batch clean all submission directories
+    cmds:
+      - |
+        for submission_id in {{.submission_ids}}
+        do
+          submission_id=$submission_id task submission:clean
+        done
+      - task: submission:clean
+        vars:
+          submission_id: Preface
 
   cherry-diff:
-    - |
-      for submission_id in {{.submission_ids}}
-      do
-        git-cherry-file HEAD ${submission_id}/main.pdf ${submission_id}/cherry.pdf
-        diffpdf ${submission_id}/main.pdf ${submission_id}/cherry.pdf
-        rm ${submission_id}/cherry.pdf
-      done
+    desc: Compare the built submission pdf to the currently commited pdf in the HEAD. This requires https://github.com/white-gecko/git-cherry-file
+    cmds:
+      - |
+        for submission_id in {{.submission_ids}}
+        do
+          git-cherry-file HEAD ${submission_id}/main.pdf ${submission_id}/cherry.pdf
+          diffpdf ${submission_id}/main.pdf ${submission_id}/cherry.pdf
+          rm ${submission_id}/cherry.pdf
+        done
 
   open:
-    - |
-      for submission_id in {{.submission_ids}}
-      do
-        xdg-open $submission_id/main.pdf
-      done
-    - task: submission:open
-      vars:
-        submission_id: Preface
+    desc: Open all submission pdfs for visual verification
+    cmds:
+      - |
+        for submission_id in {{.submission_ids}}
+        do
+          xdg-open $submission_id/main.pdf
+        done
+      - task: submission:open
+        vars:
+          submission_id: Preface
 
   diff:
-    - |
-      for submission_id in {{.submission_ids}}
-      do
-        submission_id=$submission_id task submission:diff
-      done
+    desc: Perform a batch comparison on all build submission pdfs
+    cmds:
+      - |
+        for submission_id in {{.submission_ids}}
+        do
+          submission_id=$submission_id task submission:diff
+        done
 
   submission:diff:
-    - diffpdf {{.submission_id}}/main.pdf {{.origianl_submissions}}/D2R223_paper_{{.submission_id}}.pdf
+    desc: Compare a built submission PDF to the original pdf submitted to easychair
+    cmds:
+      - diffpdf {{.submission_id}}/main.pdf {{.origianl_submissions}}/D2R223_paper_{{.submission_id}}.pdf
 
   submission:build:
-    - |
-      cd {{.submission_id}}
-      exec docker run --rm -i --net=none -v "$PWD":/data "{{.LATEX_IMAGE}}" latexmk -lualatex -shell-escape main.tex
+    desc: Build an individual submission from sources
+    cmds:
+      - |
+        cd {{.submission_id}}
+        exec docker run --rm -i --net=none -v "$PWD":/data "{{.LATEX_IMAGE}}" latexmk -lualatex -shell-escape main.tex
+    status:
+      - test ! -f {{.submission_id}}/main.tex
 
   submission:clean:
-    - |
-      cd {{.submission_id}}
-      ../latexdockercmd.sh latexmk -c -lualatex main.tex
-      rm main.abs || true
-      rm main.xmpdata || true
-      rm pdfa.xmpi || true
-      rm creationdate.lua || true
-      rm creationdate.timestamp || true
-      rm *.xdv || true
-      rm *.bbl || true
-      rm -r _minted-main/ || true
+    desc: Clean a submission directory
+    cmds:
+      - |
+        cd {{.submission_id}}
+        exec docker run --rm -i --net=none -v "$PWD":/data "{{.LATEX_IMAGE}}" latexmk -c -lualatex main.tex
+        rm main.abs || true
+        rm main.xmpdata || true
+        rm pdfa.xmpi || true
+        rm creationdate.lua || true
+        rm creationdate.timestamp || true
+        rm *.xdv || true
+        rm *.bbl || true
+        rm -r _minted-main/ || true
+    status:
+      - test ! -f {{.submission_id}}/main.tex
