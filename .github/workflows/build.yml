@@ -1,0 +1,26 @@
+ame: Build Docker image with texlive on ubuntu jammy
+
+on: [push]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: arduino/setup-task@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ env.BRANCH }}
+    - name: Run CI Tasks ⚙️
+      run: |
+        cd source-management
+        task build
+    - name: Upload the resulting artifacts 📡
+      uses: actions/upload-artifact@v3
+      with:
+        name: Pipeline artifacts
+        path: CEUR/Package
