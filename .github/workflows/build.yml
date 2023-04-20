@@ -1,4 +1,4 @@
-ame: Build Docker image with texlive on ubuntu jammy
+name: Build Docker image with texlive on ubuntu jammy
 
 on: [push]
 
