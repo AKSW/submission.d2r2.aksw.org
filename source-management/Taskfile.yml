@@ -4,7 +4,7 @@ vars:
   origianl_submissions: ../D2R2_23_submissions # downloaded from easychair
   submission_ids: 1 2 3 4 6 7 8 9 10 11 12
     # sh: find . -mindepth 1 -maxdepth 1 -type d -printf '%f\n'
-  LATEX_IMAGE: latex-ceur:ubuntu
+  LATEX_IMAGE: ghcr.io/aksw/submission.d2r2.aksw.org:docker-image
 
 tasks:
   default:
