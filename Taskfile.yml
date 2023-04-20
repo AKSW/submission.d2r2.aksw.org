@@ -26,21 +26,21 @@ tasks:
       paper_id["12"]="paper12"
 
       mkdir -p {{.package}}/AGREEMENTS-{{.workshop}}/
-      cp Agreements/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
+      cp agreement-form/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
       for submission_id in {{.submission_ids}}
       do
-        cp Agreements/$submission_id/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}-is-missing.pdf
+        cp agreement-form/$submission_id/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}-is-missing.pdf
       done
       cd {{.package}}
       zip -r AGREEMENTS-{{.workshop}}.zip AGREEMENTS-{{.workshop}}
       cd -
 
       mkdir -p {{.package}}/{{.workshop}}/
-      cp Index/_site/Vol-XXX/index.html {{.package}}/{{.workshop}}/index.html
-      cp Sources/Preface/main.pdf {{.package}}/{{.workshop}}/preface.pdf
+      cp index/_site/Vol-XXX/index.html {{.package}}/{{.workshop}}/index.html
+      cp source-management/Preface/main.pdf {{.package}}/{{.workshop}}/preface.pdf || echo "skip"
       for submission_id in {{.submission_ids}}
       do
-        cp Sources/$submission_id/main.pdf {{.package}}/{{.workshop}}/${paper_id["$submission_id"]}.pdf
+        cp source-management/$submission_id/main.pdf {{.package}}/{{.workshop}}/${paper_id["$submission_id"]}.pdf || echo "skip"
       done
       cd {{.package}}
       zip -r {{.workshop}}.zip {{.workshop}}
