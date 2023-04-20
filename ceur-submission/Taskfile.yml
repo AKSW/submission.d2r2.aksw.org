@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  submission_ids: 1805 2109 2547 2553 3784 6009 6761 7697 8771 9422 9870 Preface
+  submission_ids: 1 2 3 4 6 7 8 9 10 11 12
   package: CEUR/Package
   workshop: D2R2-23
 
@@ -13,17 +13,17 @@ tasks:
     - |
       declare -A paper_id
       paper_id["Preface"]="preface"
-      paper_id["1805"]="paper01"
-      paper_id["6761"]="paper02"
-      paper_id["7697"]="paper03"
-      paper_id["2109"]="paper04"
-      paper_id["8771"]="paper05"
-      paper_id["3784"]="paper06"
-      paper_id["2547"]="paper07"
-      paper_id["6009"]="paper08"
-      paper_id["9422"]="paper09"
-      paper_id["2553"]="paper10"
-      paper_id["9870"]="paper11"
+      paper_id["01"]="paper01"
+      paper_id["02"]="paper02"
+      paper_id["03"]="paper03"
+      paper_id["04"]="paper04"
+      paper_id["06"]="paper06"
+      paper_id["07"]="paper07"
+      paper_id["08"]="paper08"
+      paper_id["09"]="paper09"
+      paper_id["10"]="paper10"
+      paper_id["11"]="paper11"
+      paper_id["12"]="paper12"
 
       mkdir -p {{.package}}/AGREEMENTS-{{.workshop}}/
       cp Agreements/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
