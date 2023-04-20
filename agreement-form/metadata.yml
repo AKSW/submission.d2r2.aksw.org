@@ -1,0 +1,11 @@
+paper01:
+  title: Your Paper Title
+  authors:
+    - name: Author One
+    - name: Author Two
+    - name: Your Name
+  corresponding_author:
+    - name: Your Name
+      email: you@institution.org
+      affiliation: Your Affiliation
+      address: Your insitutional address
