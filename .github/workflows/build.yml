@@ -3,7 +3,33 @@ name: Build Paper Sources and Submission Files
 on: [push, pull_request]
 
 jobs:
-  docker:
+  agreement:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    if: github.event_name == 'pull_request'
+    steps:
+    - uses: arduino/setup-task@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ env.BRANCH }}
+    - name: Setup Poetry
+      uses: pronovic/setup-poetry@v1
+    - name: Run CI Tasks for Forms ⚙️
+      run: |
+        cd agreement-form
+        task build
+        cd ..
+        task to-sign compile
+    - name: Upload the resulting agreemtn form 📡
+      uses: actions/upload-artifact@v3
+      with:
+        name: Forms to Sign
+        path: TO-SIGN.zip
+  package:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -15,22 +41,6 @@ jobs:
     - uses: actions/checkout@v3
       with:
         ref: ${{ env.BRANCH }}
-    - name: Setup Poetry
-      uses: pronovic/setup-poetry@v1
-      if: ${{ github.event_name == 'pull_request' }}
-    - name: Run CI Tasks for Forms ⚙️
-      if: ${{ github.event_name == 'pull_request' }}
-      run: |
-        cd agreement-form
-        task build
-        cd ..
-        task to-sign compile
-    - name: Upload the resulting agreemtn form 📡
-      if: ${{ github.event_name == 'pull_request' }}
-      uses: actions/upload-artifact@v3
-      with:
-        name: Forms to Sign
-        path: TO-SIGN.zip
     - name: Run CI Tasks ⚙️
       run: |
         cd source-management
