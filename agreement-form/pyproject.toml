@@ -14,6 +14,8 @@ pypdf = "^3.6.0"
 pyyaml = "^6.0"
 click = "^8.1.3"
 
+[tool.poetry.scripts]
+fill_form = "submission.agreement:fill_form"
 
 [build-system]
 requires = ["poetry-core"]
