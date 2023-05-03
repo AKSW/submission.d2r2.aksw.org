@@ -8,7 +8,7 @@ readme = "../README.md"
 packages = [{include = "submission"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.9"
 reportlab = "^3.6.12"
 pypdf = "^3.6.0"
 pyyaml = "^6.0"
