@@ -1,6 +1,6 @@
 name: Build Paper Sources and Submission Files
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   docker:
