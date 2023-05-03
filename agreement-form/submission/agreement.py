@@ -13,8 +13,11 @@ LINE_LIMIT = 76
 def split_line(line):
     if len(line) > LINE_LIMIT:
         split_pos = line[:LINE_LIMIT].rfind(' ')
-        return line[:split_pos], line[split_pos + 1:]
-    return line, ""
+        if len(line[split_pos + 1:]) > LINE_LIMIT:
+            second_line = split_line(line[split_pos + 1:])
+            return line[:split_pos], second_line[0], second_line[1]
+        return line[:split_pos], line[split_pos + 1:], ""
+    return line, "", ""
 
 
 def fill_text(agreement_pdf, output, data):
@@ -27,8 +30,10 @@ def fill_text(agreement_pdf, output, data):
     can.setFont('Courier', 12)
     can.drawString(20, 710, split_line(data["title"])[0])
     can.drawString(20, 695, split_line(data["title"])[1])
-    can.drawString(20, 650, split_line(data["authors"])[0])
-    can.drawString(20, 635, split_line(data["authors"])[1])
+    can.drawString(20, 680, split_line(data["title"])[2])
+    can.drawString(20, 653, split_line(data["authors"])[0])
+    can.drawString(20, 638, split_line(data["authors"])[1])
+    can.drawString(20, 623, split_line(data["authors"])[2])
     can.drawString(70, 586, corresponding_author["name"])
     can.drawString(70, 563, split_line(corresponding_author["affiliation"])[0])
     can.drawString(70, 553, split_line(corresponding_author["affiliation"])[1])
