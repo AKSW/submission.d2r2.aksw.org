@@ -1,0 +1,35 @@
+version: '3'
+
+vars:
+  submission_ids: 2 4 6 8 9 10 11
+
+tasks:
+  default:
+    - task -l
+
+  install:
+    desc: Install dependencies and project
+    cmds:
+      - |
+        poetry install
+
+  build:
+    desc: Batch build all submissions
+    cmds:
+      - |
+        for submission_id in {{.submission_ids}}
+        do
+          submission_id=$submission_id task submission:build || true
+        done
+      - task: submission:build
+        vars:
+          submission_id: Preface
+
+  submission:build:
+    desc: Build an individual submission from sources
+    cmds:
+      - |
+        cd {{.submission_id}}
+        poetry run fill_form --metadata metadata.yml --template ../ceur-author-agreement-ccby-ntp.pdf --output agreement_to_sign.pdf
+    status:
+      - test ! -f {{.submission_id}}/metadata.yml
