@@ -25,7 +25,6 @@ jobs:
         cd ..
         task to-sign compile
     - name: Upload the resulting agreement form 📡
-      id: artifact-upload
       uses: actions/upload-artifact@v3
       with:
         name: Forms to Sign
