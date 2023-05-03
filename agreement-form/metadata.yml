@@ -5,7 +5,10 @@ paper01:
     - name: Author Two
     - name: Your Name
   corresponding_author:
-    - name: Your Name
-      email: you@institution.org
-      affiliation: Your Affiliation
-      address: Your insitutional address
+    name: Your Name
+    email: you@institution.org
+    affiliation: Your Affiliation
+    address: Your insitutional address
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Ricardo Usbeck, Sören Auer, Julia Holze, Sebastian Tramp, and Natanael Arndt
