@@ -25,16 +25,13 @@ jobs:
         cd ..
         task to-sign compile
     - name: Upload the resulting agreement form 📡
+      id: artifact-upload
       uses: actions/upload-artifact@v3
       with:
         name: Forms to Sign
         path: to-sign
-    - uses: MOZGIII/artifact-info@v1
-      id: artifact-info
-      with:
-        artifact-name: Forms to Sign
-    - run: echo ${{ steps.artifact-info.outputs.archive-download-url }}
-    - run: echo Please print and sign the form. {{ steps.artifact-info.outputs.archive-download-url }} If done so, upload a scan of the signed form.
+    - run: echo ${{ steps.artifact-upload.outputs }}
+    - run: echo Please print and sign the form. {{ steps.artifact-upload.outputs }} If done so, upload a scan of the signed form.
   package:
     runs-on: ubuntu-latest
     permissions:
