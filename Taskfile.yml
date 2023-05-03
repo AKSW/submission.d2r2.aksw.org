@@ -13,13 +13,13 @@ tasks:
     - |
       declare -A paper_id
       paper_id["Preface"]="preface"
-      paper_id["2"]="paper02"
-      paper_id["4"]="paper04"
-      paper_id["6"]="paper06"
-      paper_id["8"]="paper08"
-      paper_id["9"]="paper09"
-      paper_id["10"]="paper10"
-      paper_id["11"]="paper11"
+      paper_id["2"]="paper1"
+      paper_id["4"]="paper2"
+      paper_id["6"]="paper3"
+      paper_id["8"]="paper4"
+      paper_id["9"]="paper5"
+      paper_id["10"]="paper6"
+      paper_id["11"]="paper7"
 
       mkdir -p {{.package}}/AGREEMENTS-{{.workshop}}/
       cp agreement-form/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
