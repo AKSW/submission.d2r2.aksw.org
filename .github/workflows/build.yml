@@ -17,16 +17,16 @@ jobs:
         ref: ${{ env.BRANCH }}
     - name: Setup Poetry
       uses: pronovic/setup-poetry@v1
-      if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+      if: ${{ github.event_name == 'pull_request' }}
     - name: Run CI Tasks for Forms ⚙️
-      if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+      if: ${{ github.event_name == 'pull_request' }}
       run: |
         cd agreement-form
         task build
         cd ..
         task to-sign compile
     - name: Upload the resulting agreemtn form 📡
-      if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+      if: ${{ github.event_name == 'pull_request' }}
       uses: actions/upload-artifact@v3
       with:
         name: Forms to Sign
