@@ -30,8 +30,6 @@ jobs:
       with:
         name: Forms to Sign
         path: to-sign
-    - run: echo ${{ printf steps.artifact-upload.outputs }}
-    - run: echo Please print and sign the form. ${{ steps.artifact-upload.outputs }} If done so, upload a scan of the signed form.
   package:
     runs-on: ubuntu-latest
     permissions:
