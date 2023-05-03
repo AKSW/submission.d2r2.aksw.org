@@ -49,4 +49,3 @@ tasks:
       do
         cp agreement-form/$submission_id/agreement_to_sign.pdf to-sign/agreement_to_sign${submission_id}.pdf || true
       done
-      zip -r TO-SIGN.zip to-sign
