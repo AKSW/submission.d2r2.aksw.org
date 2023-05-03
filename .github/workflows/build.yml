@@ -29,15 +29,12 @@ jobs:
       with:
         name: Forms to Sign
         path: to-sign
-    - name: add artifact links to pull request and related issues step
-      uses: tonyhallett/artifacts-url-comments@v1.1.0
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: MOZGIII/artifact-info@v1
+      id: artifact-info
       with:
-          prefix: Please print and sign the form.
-          suffix: If done so, upload a scan of the signed form.
-          format: name
-          addTo: pullandissues
+        artifact-name: Forms to Sign
+    - run: echo ${{ steps.artifact-info.outputs.archive-download-url }}
+    - run: echo Please print and sign the form. {{ steps.artifact-info.outputs.archive-download-url }} If done so, upload a scan of the signed form.
   package:
     runs-on: ubuntu-latest
     permissions:
