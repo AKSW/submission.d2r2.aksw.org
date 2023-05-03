@@ -24,11 +24,11 @@ jobs:
         task install build
         cd ..
         task to-sign compile
-    - name: Upload the resulting agreemtn form 📡
+    - name: Upload the resulting agreement form 📡
       uses: actions/upload-artifact@v3
       with:
         name: Forms to Sign
-        path: TO-SIGN.zip
+        path: to-sign
   package:
     runs-on: ubuntu-latest
     permissions:
