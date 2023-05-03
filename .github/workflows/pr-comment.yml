@@ -52,6 +52,7 @@ jobs:
             for (const art of artifacts) {
               body += `\n* [${art.name}.zip](https://nightly.link/${owner}/${repo}/actions/artifacts/${art.id}.zip)`;
             }
+            body += `\nNow download the Forms to Sign.zip, print, sign, scan, and upload the form. IMPORTANT it must be hand signed.`
 
             core.info("Review thread message body:", body);
 
