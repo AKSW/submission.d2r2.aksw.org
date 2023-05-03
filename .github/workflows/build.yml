@@ -21,7 +21,7 @@ jobs:
     - name: Run CI Tasks for Forms ⚙️
       run: |
         cd agreement-form
-        task build
+        task install build
         cd ..
         task to-sign compile
     - name: Upload the resulting agreemtn form 📡
