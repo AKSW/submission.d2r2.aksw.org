@@ -29,8 +29,8 @@ TODO: make sure finally all boxes are ticked
 - [ ] Hand-signed the completely filled agreement form
 - [ ] Uploaded a scan of the agreement form to `agreement-form/SUB_NUMBER/agreement.pdf`
 
-> Mistakes in the editor/author agreements.
-Some editors/authors still copy/paste bitmaps of their signatures into the copyright agreements or sign on a touchscreen, instead of signing physically with a pen on paper. Further some authors forget to completely fill out the form.
+> **Mistakes in the editor/author agreements.**<br/>
+> Some editors/authors still copy/paste bitmaps of their signatures into the copyright agreements or sign on a touchscreen, instead of signing physically with a pen on paper. Further some authors forget to completely fill out the form.<br/>
 > (https://ceur-ws.org/HOWTOSUBMIT.html#TOPERRORS)
 
 - [ ] The agreement form is HAND SIGNED with a PEN ON PAPER
