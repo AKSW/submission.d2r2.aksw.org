@@ -50,9 +50,9 @@ When the workflow has finished successfully our robot 🤖 should comment on you
 
 - [ ] The agreement form is HAND SIGNED with a PEN ON PAPER
 
-<!--
-TODO: if all boxes are ticked uncomment the following line
--->
+## Finally
+
+If all boxes are checked, remove the uncomment the following line.
 
 <!--
 cc: @white-gecko @seebi @RicardoUsbeck
