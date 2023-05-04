@@ -49,6 +49,6 @@ jobs:
       - name: Comment on issue by current pull request
         uses: alexrogalskiy/github-action-issue-commenter@master
         with:
-          message: "Here are the artifacts for this pull-request:\n\n${{ steps.artifacts-text.outputs.result }}\n\nnNow download the `Forms to Sign.zip`, print, sign, scan, and upload the form. IMPORTANT it must be hand signed."
+          message: "Here are the artifacts for this pull-request:\n\n${{ steps.artifacts-text.outputs.result }}\n\nNow download the `Forms to Sign.zip`, print, sign, scan, and upload the form. IMPORTANT it must be hand signed."
           requestId: ${{ steps.pr-number.outputs.result }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
