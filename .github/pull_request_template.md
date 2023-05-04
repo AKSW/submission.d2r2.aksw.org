@@ -25,7 +25,7 @@ TODO: make sure finally all boxes are ticked
 \conference{Second International Workshop on Linked Data-driven Resilience Research (D2R2'23) co-located with ESWC 2023, May 28th, 2023, Hersonissos, Greece}
 ```
 
-Note: The page limit of 10 pages does not apply anymore. We follow the [submission guidelines by CEUR](https://ceur-ws.org/HOWTOSUBMIT.html).
+*Note:* The page limit of 10 pages does not apply anymore. We follow the [submission guidelines by CEUR](https://ceur-ws.org/HOWTOSUBMIT.html).
 
 > We distinguish regular papers (at least 10 "standard" pages) and short papers (5-9 "standard" pages).
 
