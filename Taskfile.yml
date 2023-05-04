@@ -42,6 +42,27 @@ tasks:
       zip -r {{.workshop}}.zip {{.workshop}}
       cd -
 
+  join-metadata:
+    - |
+      declare -A paper_id
+      paper_id["Preface"]="preface"
+      paper_id["2"]="paper1"
+      paper_id["4"]="paper2"
+      paper_id["6"]="paper3"
+      paper_id["8"]="paper4"
+      paper_id["9"]="paper5"
+      paper_id["10"]="paper6"
+      paper_id["11"]="paper7"
+
+      touch metadata.yml
+      for submission_id in {{.submission_ids}}
+      do
+        id=${paper_id["$submission_id"]}
+        echo $id
+        docker run -i --rm docker.io/mikefarah/yq '(keys | .[0]) = "'"${id}"'"' < agreement-form/${submission_id}/metadata.yml >> metadata.yml || true
+      done
+      docker run -i --rm docker.io/mikefarah/yq -o json < metadata.yml > metadata.json
+
   to-sign:
     - |
       mkdir -p to-sign/
