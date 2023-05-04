@@ -1,0 +1,15 @@
+paper01:
+  title: "Dynamic Representations of Global Crises: Creation and Analysis of a Temporal Knowledge Graph for Conflicts, Trade and Value Networks"
+  authors:
+    - name: Julia Gastinger
+    - name: Nils Steinert
+    - name: Sabine Gründer-Fahrer
+    - name: Michael Martin
+  corresponding_author:
+    name: Julia Gastinger
+    email: julia.gastinger@neclab.eu
+    affiliation: NEC Laboratories Europe GmbH and University of Mannheim, Data and Web Science Group
+    address:  Kurfuersten-Anlage 36, 69115 Heidelberg, Germany and B 6, 26, 68159 Mannheim, Germany
+  event: 
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Ricardo Usbeck, Sören Auer, Julia Holze, Sebastian Tramp, and Natanael Arndt

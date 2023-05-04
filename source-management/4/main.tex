@@ -1,0 +1,81 @@
+\documentclass[
+]{ceurart}
+
+\sloppy
+\usepackage{svg}
+\usepackage{listings}
+\lstset{breaklines=true}
+\usepackage{todonotes}
+\usepackage[justification=centering]{caption}
+
+
+\begin{document}
+
+\copyrightyear{2023}
+\copyrightclause{Copyright for this paper by its authors.
+  Use permitted under Creative Commons License Attribution 4.0
+  International (CC BY 4.0).}
+
+\conference{D2R2'23: Second International Workshop on Linked Data-driven Resilience Research co-located with ESWC2023, May 28th, 2023, Hersonissos, Greece}  
+
+\title{Dynamic Representations of Global Crises: Creation and Analysis of a Temporal Knowledge Graph for Conflicts, Trade and Value Networks}
+
+\author[1,2]{Julia Gastinger}[
+email=julia.gastinger@neclab.eu,
+]
+\cormark[1]
+\address[1]{NEC Laboratories Europe GmbH, Kurfuersten-Anlage 36, 69115 Heidelberg, Germany}
+\address[2]{University of Mannheim, Data and Web Science Group, B 6, 26, 68159 Mannheim, Germany}
+
+\author[3]{Nils Steinert}[
+email=nils.steinert@implisense.com,
+]
+\address[3]{Implisense GmbH, Spiekermannstraße 31a, 13189 Berlin, Germany}
+
+\author[4]{Sabine Gründer-Fahrer}[
+email=gruender-fahrer@infai.org,
+]
+\author[4]{Michael Martin}[email=martin@infai.org]
+\address[4]{Institute for Applied Informatics (InfAI), Goerdelerring 9, 04109 Leipzig, Germany}
+
+\cortext[1]{Corresponding author.}
+
+\begin{abstract}
+This paper presents a novel approach to understanding global crises and trade patterns through the creation and analysis of a temporal Knowledge Graph (tKG). Combining data from the Armed Conflict Location \& Event Data Project (ACLED) and Global Trade Alerts (GTA), the tKG provides a comprehensive view of the intersection between worldwide crises and global trade over time. The paper details the process of creating the tKG, including the aggregation and merging of information from multiple sources. 
+Additionally, the paper offers insights into the analysis of the tKG and its potential applicability to data-driven Resilience Research. As an initial application, the tKG can be used to predict global trade events, such as trade sanctions across various categories and countries, based on global conflict events, to identify potential trade disruptions and anticipate the economic impact of global conflicts.
+\end{abstract}
+
+\begin{keywords}
+  Temporal Knowledge Graphs \sep
+  Knowledge Graphs \sep
+  Resilience Research \sep
+  Crisis Research
+\end{keywords}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+\input{chapters/01_introduction.tex}
+
+\section{Related Work}\label{sec:rel_work}
+\input{chapters/02_State_of_the_Art.tex}
+
+\section{Resources}\label{sec:resources}
+\input{chapters/03_Resources.tex}
+
+\section{Method and Implementation}\label{sec:method}
+\input{chapters/04_Implementation.tex}
+
+\section{Analysis and Results}\label{sec:experiments}
+\input{chapters/05_Experiments_Results.tex}
+
+\section{Conclusion and Future Work}\label{sec:conclusion}
+\input{chapters/06_Conclusion.tex}
+
+\begin{acknowledgments}
+The authors acknowledge funding by the Federal Ministry for Economics and Climate Action of Germany in the project CoyPu (project number 01MK21007[A-L]).
+\end{acknowledgments}
+
+\bibliography{references}
+
+\end{document}
