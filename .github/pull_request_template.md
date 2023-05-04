@@ -52,7 +52,7 @@ When the workflow has finished successfully our robot 🤖 should comment on you
 
 ## Finally
 
-If all boxes are checked, remove the uncomment the following line.
+If all boxes are checked, uncomment the following line.
 
 <!--
 cc: @white-gecko @seebi @RicardoUsbeck
