@@ -47,5 +47,5 @@ tasks:
       mkdir -p to-sign/
       for submission_id in {{.submission_ids}}
       do
-        cp agreement-form/$submission_id/agreement_to_sign.pdf to-sign/agreement_to_sign${submission_id}.pdf || true
+        cp agreement-form/$submission_id/agreement_to_sign.pdf to-sign/agreement_to_sign_${submission_id}.pdf || true
       done
