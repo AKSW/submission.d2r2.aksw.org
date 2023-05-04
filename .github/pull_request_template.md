@@ -25,8 +25,13 @@ TODO: make sure finally all boxes are ticked
 - [ ] Created directory `agreement-form/SUB_NUMBER`
 - [ ] Updated `agreement-form/SUB_NUMBER/metadata.yml`
 
+⏳ Hang on, now the workflow action will run 🎡 to compile all artifacts 📦 and the agreement form 📝 to by signed by you.
+(If you are new to github the workflow requires our manual approval.)
+
+When the workflow has finished successfully our robot 🤖 should comment on your pull-request with the links to the artifacts, including the form to be signed.
+
 ### Second Run
-- [ ] Hand-signed the completely filled agreement form
+- [ ] Hand-signed the completely filled agreement form ✍️
 - [ ] Uploaded a scan of the agreement form to `agreement-form/SUB_NUMBER/agreement.pdf`
 
 > **Mistakes in the editor/author agreements.**<br/>
