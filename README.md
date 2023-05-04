@@ -7,7 +7,7 @@
 
 **For Authors**
 
-In the following  refers to the number of your easychair submission.
+In the following `SUB_NUMBER` refers to the number of your easychair submission.
 
 0. Fork this repository
 1. Open a Pull request for your forked repository/branch. This will also provide you with [a nice check list](https://github.com/AKSW/submission.d2r2.aksw.org/blob/main/.github/pull_request_template.md) of things to verify befor submission.
