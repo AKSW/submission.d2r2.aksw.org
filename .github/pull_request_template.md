@@ -41,7 +41,9 @@ When the workflow has finished successfully our robot 🤖 should comment on you
 
 ### Second Run
 - [ ] Hand-signed the completely filled agreement form ✍️
-- [ ] Uploaded a scan of the agreement form to `agreement-form/SUB_NUMBER/agreement.pdf`
+- [ ] One of the following two options:
+    - Uploaded a scan of the agreement form to `agreement-form/SUB_NUMBER/agreement.pdf`
+    - Send your signed form via email to the editors
 
 > **Mistakes in the editor/author agreements.**<br/>
 > Some editors/authors still copy/paste bitmaps of their signatures into the copyright agreements or sign on a touchscreen, instead of signing physically with a pen on paper. Further some authors forget to completely fill out the form.<br/>
