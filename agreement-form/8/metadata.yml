@@ -1,14 +1,16 @@
-paper01:
-  title: "Your Title: special research on your topic"
+paper08:
+  title: "A News Recommendation System for Environmental Risk Management"
   authors:
-    - name: Author One
-    - name: Author Two
-    - name: Your Name
+    - name: Hamed Aboutorab 
+    - name: Ran Yu
+    - name: Alishiba Dsouza
+    - name: Morteza Saberi
+    - name: Omar Khadeer Hussain
   corresponding_author:
-    name: Your Name
-    email: you@institution.org
-    affiliation: Your Affiliation
-    address: Your insitutional address
+    name: Hamed Aboutorab
+    email: h.aboutorab@unsw.edu.au
+    affiliation: University of New South Wales
+    address: Northcott Drive, Canberra, ACT 2612, Australia
   event:
     title: Second International Workshop on Linked Data-driven Resilience Research 2023
     editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
