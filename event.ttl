@@ -72,6 +72,7 @@ aksw:PatrickWestphal
 
 aksw:RicardoUsbeck
     schema:affiliation <https://www.uni-hamburg.de/> ;
+    schema:memberOf aksw:Group ;
     a schema:Person, foaf:Document, foaf:Person ;
     skos:prefLabel "Prof. Dr. Ricardo Usbeck" ;
     foaf:homepage aksw:RicardoUsbeck ;
