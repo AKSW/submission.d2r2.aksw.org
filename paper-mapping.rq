@@ -1,3 +1,6 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <http://schema.org/>
 PREFIX d2r2p: <https://2023.d2r2.aksw.org/#>
 
 CONSTRUCT {
@@ -14,7 +17,7 @@ CONSTRUCT {
   .
 
   ?authorIri
-    rdfs:label ?authorName ;
+    foaf:name ?authorName ;
   .
 }
 #SELECT ?entry ?id ?paper
