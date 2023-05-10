@@ -1,0 +1,45 @@
+PREFIX d2r2p: <https://2023.d2r2.aksw.org/#>
+
+CONSTRUCT {
+  <https://2023.d2r2.aksw.org/#submissions>
+    schema:subEvent ?paperIri .
+
+  ?paperIri
+    dct:title ?title ;
+    schema:performer ?authorCollectionIri ;
+  .
+
+  ?authorCollectionIri
+    ?authorMember ?authorIri ;
+  .
+
+  ?authorIri
+    rdfs:label ?authorName ;
+  .
+}
+#SELECT ?entry ?id ?paper
+WHERE {
+  BIND(STRDT(url:text(</data/metadata.json>), xsd:json) AS ?json)
+  BIND(json:entries(?json) AS ?entries)
+  ?entries json:unnest (?entry ?i)
+
+  BIND(json:path(?entry, "$.key") AS ?paperId)
+  BIND(json:path(?entry, "$.value") AS ?content)
+
+  BIND(IRI(CONCAT(STR(d2r2p:), ?paperId)) AS ?paperIri)
+  BIND(json:path(?content, "$.title") AS ?title)
+
+  BIND(IRI(CONCAT(STR(?paperIri), "-authors")) AS ?authorCollectionIri)
+
+  LATERAL {
+    BIND(json:path(?content, "$.authors") AS ?authors)
+    ?authors json:unnest (?author ?authorIdx) .
+
+    BIND(json:path(?author, "$.name") AS ?authorName)
+    optional {
+      ?authorIriRaw foaf:name ?authorName .
+    }
+    BIND(IF(BOUND(?authorIriRaw), ?authorIriRaw, IRI(CONCAT(STR(d2r2p:), ENCODE_FOR_URI(?authorName)))) AS ?authorIri)
+    BIND(IRI(CONCAT(STR(rdf:), "_", STR(?authorIdx + 1))) AS ?authorMember)
+  }
+}

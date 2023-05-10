@@ -4,12 +4,16 @@ vars:
   submission_ids: 2 4 6 8 9 10 11
   package: CEUR/Package
   workshop: D2R2-23
+  BASE_IRI: https://2023.d2r2.aksw.org/
 
 tasks:
   default:
     - task -a
 
   compile:
+    - task: paper-data:convert
+    - task: index:clone
+    - task: index:build
     - |
       declare -A paper_id
       paper_id["Preface"]="preface"
@@ -42,7 +46,7 @@ tasks:
       zip -r {{.workshop}}.zip {{.workshop}}
       cd -
 
-  join-metadata:
+  paper-data:join:
     - |
       declare -A paper_id
       paper_id["Preface"]="preface"
@@ -62,6 +66,33 @@ tasks:
         docker run -i --rm docker.io/mikefarah/yq '(keys | .[0]) = "'"${id}"'"' < agreement-form/${submission_id}/metadata.yml >> metadata.yml || true
       done
       docker run -i --rm docker.io/mikefarah/yq -o json < metadata.yml > metadata.json
+
+  paper-data:convert:
+    - |
+      docker run -i --rm -v $PWD:/data docker.io/aksw/rpt integrate /data/event.ttl /data/paper-mapping.rq > paper.ttl
+
+  index:build:
+    desc: Get the sources of the jekyll rdf template
+    cmds:
+      - |
+        cp event.ttl paper.ttl index
+        cd index
+        task graph build
+    vars:
+      BASE_IRI: '{{.BASE_IRI}}'
+
+  index:clone:
+    desc: Get the sources of the jekyll rdf template
+    cmds:
+      - |
+        git clone https://github.com/AKSW/ceur-jekyll-rdf index
+
+  index:
+    desc: Prepare index
+    cmds:
+      - task: index:clone
+      - task: index:build
+      - cp index/_site/Vol-XXX/index.html index.html
 
   to-sign:
     - |

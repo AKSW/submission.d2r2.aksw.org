@@ -95,8 +95,13 @@ aksw:SimonBin
     a schema:Person, foaf:Person ;
     foaf:name "Simon Bin" .
 
+aksw:ClausStadler
+    a schema:Person, foaf:Person ;
+    foaf:name "Claus Stadler" .
+
 aksw:SoerenAuer
     schema:affiliation <https://www.tib.eu/> ;
+    schema:memberOf <https://www.uni-hannover.de/> ;
     a schema:Person, foaf:Person ;
     skos:prefLabel "Prof. Dr. Sören Auer" ;
     foaf:homepage <https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-digital-libraries/staff/soeren-auer> ;
@@ -125,13 +130,14 @@ aksw:SoerenAuer
     dct:date "2023-05-28"^^xsd:date ;
     schema:organizer <https://2023.d2r2.aksw.org/organizing-committee/> ;
     schema:subEvent <https://2023.d2r2.aksw.org/#submissions> ;
+    schema:location <https://2023.eswc-conferences.org/conference-venue/> ;
     vivo:hasProceedings <https://2023.d2r2.aksw.org/#proceedings> ;
     a bibo:Conference, schema:Event, foaf:Document, <https://vocab.eccenca.com/di/Dataset> ;
     rdfs:label "Second International Workshop on Linked Data-driven Resilience Research 2023"@de, "Second International Workshop on Linked Data-driven Resilience Research 2023"@en ;
     foaf:homepage <https://2023.d2r2.aksw.org/> ;
     ceur:acceptedpapers 7 ;
-    ceur:acceptedregularpapers 7 ;
-    ceur:acceptedshortpapers 0 ;
+    ceur:acceptedregularpapers 6 ;
+    ceur:acceptedshortpapers 1 ;
     ceur:acronym "D2R2" ;
     ceur:submittedpapers 11 ;
     dw:pc <https://2023.d2r2.aksw.org/program-committee/> .
@@ -144,19 +150,9 @@ aksw:SoerenAuer
     a bibo:Proceedings, foaf:Document ;
     ceur:voltitle "Linked Data-driven Resilience Research 2023"@en .
 
-<https://2023.d2r2.aksw.org/#programm-authors-1>
-    rdf:_1 dw:AngelieKraft ;
-    rdf:_2 aksw:RicardoUsbeck ;
-    a rdfs:Class .
-
-<https://2023.d2r2.aksw.org/#programm-talk-1>
-    dct:identifier "paper01" ;
-    dct:title "The Ethical Risks of Analyzing Crisis Events on Social Media with Machine Learning"@en ;
-    schema:endTime "09:35:00.000"^^xsd:time ;
-    schema:performer aksw:RicardoUsbeck, <https://2023.d2r2.aksw.org/#programm-authors-1>, dw:AngelieKraft ;
-    schema:startTime "09:15:00.000"^^xsd:time ;
-    a schema:Event ;
-    dw:exclude false .
+<https://2023.d2r2.aksw.org/#submissions>
+    dct:title "Beiträge"@de, "Submissions"@en ;
+    a schema:Event .
 
 <https://2023.d2r2.aksw.org/call-for-papers/>
     rdfs:label "Call for Papers"@de, "Call for Papers"@en .
@@ -240,17 +236,11 @@ d2r2-23-pc:NenadKrdavac
     a schema:Person, foaf:Person ;
     foaf:name "Nenad Krdavac" .
 
-<https://2023.d2r2.aksw.org/venue/>
-    schema:addressCountry "Germany" ;
-    schema:addressLocality "Leipzig" ;
-    schema:name "Neues Rathaus/City Hall" ;
-    schema:postalCode "04109" ;
-    schema:streetAddress "Martin-Luther-Ring 4-6" ;
+<https://2023.eswc-conferences.org/conference-venue/>
+    schema:addressCountry "Greece" ;
+    schema:addressLocality "Hersonissos" ;
     a schema:PostalAddress, foaf:Document ;
-    rdfs:label "Venue"@en, "Veranstaltungsort"@de ;
-    <http://www.w3.org/2003/01/geo/wgs84_pos#geometry> "POINT(12.37267 51.33594)" ;
-    <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "51.33594"^^xsd:float ;
-    <http://www.w3.org/2003/01/geo/wgs84_pos#long> "12.37267"^^xsd:float .
+    rdfs:label "Venue"@en, "Veranstaltungsort"@de .
 
 <https://2023.eswc-conferences.org/>
     schema:endDate "2023-05-28"^^xsd:date ;
@@ -289,10 +279,20 @@ d2r2-23-pc:NenadKrdavac
     schema:streetAddress " Hainstraße 8" ;
     a schema:PostalAddress .
 
+<https://dbpedia.org/>
+    a schema:Organization ;
+    rdfs:label "DBpedia Association" ;
+    foaf:homepage <https://dbpedia.org/> .
+
 <https://www.tib.eu/>
     a foaf:Document, foaf:Organization ;
     rdfs:label "Technische Informationsbibliothek (TIB)"@de, "Technische Informationsbibliothek (TIB)"@en ;
     foaf:homepage <https://www.tib.eu/> .
+
+<https://www.uni-hannover.de/>
+    a foaf:Document, foaf:Organization ;
+    rdfs:label "Gottfried Wilhelm Leibniz Universität Hannover"@de, "Gottfried Wilhelm Leibniz University Hannover"@en ;
+    foaf:homepage <https://www.uni-hannover.de/> .
 
 <https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-digital-libraries/staff/soeren-auer>
     a foaf:Document .
@@ -301,4 +301,3 @@ d2r2-23-pc:NenadKrdavac
     a foaf:Organization ;
     rdfs:label "University of Hamburg"@de, "University of Hamburg"@en ;
     foaf:homepage <https://www.uni-hamburg.de> .
-
