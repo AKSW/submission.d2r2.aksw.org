@@ -10,16 +10,16 @@
 In the following `SUB_NUMBER` refers to the number of your easychair submission.
 
 0. Fork this repository
-1. Open a Pull request for your forked repository/branch. This will also provide you with [a nice check list](https://github.com/AKSW/submission.d2r2.aksw.org/blob/main/.github/pull_request_template.md) of things to verify befor submission.
-2. Sources
+1. Sources
     1. Create a new directory `source-management/SUB_NUMBER`
     2. Add your paper sources to this directory
     3. The main tex file must be called `main.tex` if it does not, rename it.
-3. Metadata & agreement form
+2. Metadata & agreement form
     1. Create a new directory `agreement-form/SUB_NUMBER`
     2. Copy the `metadata.yml` file from `agreement-form` to your directory `agreement-form/SUB_NUMBER`
     3. Fill `metadata.yml` with your data
-4. Commit everything to your forked repo
+3. Commit everything to your forked repo
+4. Open a Pull request for your forked repository/branch. This will also provide you with [a nice check list](https://github.com/AKSW/submission.d2r2.aksw.org/blob/main/.github/pull_request_template.md) of things to verify before submission.
 5. Sign the form
     1. Wait until our bot tells you that the agreement form can be downloaded
     2. Download the agreement form, print, sign, scan, and add the form to your repository at `agreement-form/SUB_NUMBER/agreement.pdf`. IMPORTANT it must be hand signed.
