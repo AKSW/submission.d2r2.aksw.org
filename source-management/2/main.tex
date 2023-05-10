@@ -26,7 +26,7 @@
 %%
 %% Rights management information.
 %% CC-BY is default license.
-\copyrightyear{2021}
+\copyrightyear{2023}
 \copyrightclause{Copyright for this paper by its authors.
   Use permitted under Creative Commons License Attribution 4.0
   International (CC BY 4.0).}
@@ -109,14 +109,15 @@ In this context, the CRISP KG aims to establish the backbone of information inte
 \begin{figure}
   \label{overview}
   \centering
-  \includegraphics[scale=0.25]{images/Crisp_Overview}
+  \includegraphics[width=\linewidth]{images/Crisp_Overview}
   \caption{Overview of Knowledge Graph Components.}
 \end{figure}
 
 
 Hazards consist of two main components: shocks and stresses. Shocks are sudden, intense events typically associated with large-scale disasters such as earthquakes, hurricanes, or terrorist attacks. On the other hand, stresses are the gradual factors that can weaken a community's resilience. Stresses can be caused by a variety of factors, such as climate change, population growth, urbanization, and economic instability. We use the INSPIRE categories introduced by the European Union spatial data infrastructure (SDI) initiative to classify hazards \cite{bartha2011standardization}. 
 
-Because hazard events can occur without regard for political borders, we utilize a grid cell system to organize both the events and infrastructure. Once organized into grid cells, we then assign the events and infrastructure to overlapping regions, such as communities, cities, and states. By doing so, we can connect the hazard events to infrastructure in a more effective and efficient manner, regardless of where they may occur. This approach allows for a more holistic understanding of hazards and their impacts, ultimately leading to better preparedness and response efforts. The selected grid cells in CRISP are one square kilometer cells defined by the Austrian Central Institute for Meteorology and Geodynamics \cite{haiden2011integrated}. All regions including political regions (e.g. communities, districts, states) and service regions (e.g. hospital and fire-brigade care zones) are defined as spatial features and mapped to underlying grid cells. Depending on specific use cases and their involved regions, infrastructure elements that are assigned to grid cells may be allocated to multiple overlaying regions. 
+Because hazard events can occur without regard for political borders, we utilize a grid cell system to organize both the events and infrastructure. Once organized into grid cells, we then assign the events and infrastructure to overlapping regions, such as communities, cities, and states. By doing so, we can connect the hazard events to infrastructure in a more effective and efficient manner, regardless of where they may occur. This approach allows for a more holistic understanding of hazards and their impacts, ultimately leading to better preparedness and response efforts. The selected grid cells in CRISP are one square kilometer cells defined by the Austrian Central Institute for Meteorology and Geodynamics \cite{haiden2011integrated}. 
+All regions including political regions (e.g. communities, districts, states) and service regions (e.g. hospital and fire-brigade care zones) are defined as spatial features and mapped to underlying grid cells. Depending on specific use cases and their involved regions, infrastructure elements that are assigned to grid cells may be allocated to multiple overlaying regions. 
 Finally, the infrastructure networks refer to the interconnected relationships and dependencies between different cells, which can be visualized as a complex web of interactions. These networks define the physical elements of interconnected systems that are necessary to support, maintain, or improve the living conditions of society by providing essential goods and services, collectively known as urban infrastructure. In the case of the CRISP KG, this refers to the collection of physical structures assigned to a specific grid cell that delivers essential services. We define two categories: those that are part of a network, like road segments of a street network, and those that operate independently, such as hospitals and fire stations. Many infrastructure elements are themselves dependent on each other. A malfunction in one infrastructure can cause disruptions to the services provided by dependent infrastructure and networks. For example communication or transport network failures can impact the operation of hospitals.
 
 
@@ -127,33 +128,50 @@ Finally, the infrastructure networks refer to the interconnected relationships a
 \section{Big Data Challenge}
 
 
-Native RDF triple storage and relational-to-RDF translations are two distinct methods of storing and managing RDF data. Native RDF triple stores are optimized for the efficient storage and retrieval of RDF triples and enable querying of the data using SPARQL. However, for large amounts of data, the size of a native RDF triple store can increase significantly, making it less practical for some use cases. Relational-to-RDF translations provide a familiar storage environment and allow RDF data to be stored in traditional relational databases, which are widely used and well-understood by many organizations. CRISP KG includes concepts and properties describing observations and relevant spatiotemporal data, like weather and climate data, social media, and population data as well as demographics. The weather data provides detailed measurements at a fine-grained level of one measurement per day and per square kilometer, including indicators such as temperature, humidity, radiation, and wind speed. Best practices for semantic sensor networks recommend enriching raw sensor data by including additional information such as the feature of interest, the observed property, the sampling strategy used, and other relevant details \cite{janowicz2019sosa}. Consequently, we would need a dozen of triples for a single spatiotemporal measurement to represent the raw measurement and its context. Austrian weather data in the CRISP KG consists of more than $720$ million measurements per year,  dating back to 2011 \cite{haiden2011integrated}. In order to include this amount of spatiotemporal data in CRISP KG, we follow a Relational-to-RDF approach. We utilize PostgresSQL tables to store large amounts of data and take advantage of built-in features such as table partitions and indexes. This enables us to store the data in a highly scalable way and to query data efficiently. Fig. \ref{crisp_architecture} depicts the overall architecture of the CRISP KG for storage and query of spatiotemporal data.  
+Native RDF triple storage and relational-to-RDF translations are two distinct methods of storing and managing RDF data. Native RDF triple stores are optimized for the efficient storage and retrieval of RDF triples and enable querying of the data using SPARQL. However, for large amounts of data, the size of a native RDF triple store can increase significantly, making it less practical for some use cases. 
+
+Relational-to-RDF translations provide a familiar storage environment and allow RDF data to be stored in traditional relational databases, which are widely used and well-understood by many organizations. CRISP KG includes concepts and properties describing observations and relevant spatiotemporal data, like weather and climate data, social media, and population data as well as demographics. The weather data provides detailed measurements at a fine-grained level of one measurement per day and per square kilometer, including indicators such as temperature, humidity, radiation, and wind speed. Best practices for semantic sensor networks recommend enriching RDF sensor data by including additional information such as the feature of interest, the observed property, the sampling strategy used, and other relevant details \cite{janowicz2019sosa}. 
+
+RDF format which is designed to capture rich and detailed descriptions of resources, allowing for precise semantics. However, the emphasis on expressiveness can lead to more verbose statements, as it encourages providing additional context and details. In the specific case of weather data, several attributes such as feature of interest or observed property are repeated for each measurement which can result in redundant statements and increased verbosity in our RDF store. Consequently, we would need a dozen of triples for a single spatiotemporal measurement to represent the raw measurement and its context. 
+
+For instance, the Austrian weather data in the RDFized version of CRISP KG consists of more than $720$ million measurements per year,  dating back to 2011 \cite{haiden2011integrated}. In order to include this amount of spatiotemporal data in CRISP KG and mitigate the RDF's verbosity problem, we follow a Relational-to-RDF approach instead. We utilize PostgresSQL tables to store large amounts of data and take advantage of built-in features such as table partitions and indexes. This enables us to store the data in a highly scalable way and to query data efficiently. Fig. \ref{crisp_architecture} depicts the overall architecture of the CRISP KG for storage and query of spatiotemporal data.  
 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.3]{images/CRISP_architecture.png}
+  \includegraphics[width=\linewidth]{images/CRISP_architecture.png}
   \caption{Architecture of CRISP project for creating and accessing relevant data for crisis management.}
   \label{crisp_architecture}
 \end{figure}
 
 
-In order to include the RDF representation of the sensor data stored in relational tables, we use the Ontop Virtual Knowledge Graph system \cite{xiao2020virtual} which relies on R2RML mappings and translates SPARQL queries expressed over the knowledge graphs into SQL queries executed by the PostgreSQL database. As an example, Fig. \ref{zamg_mapping} shows the definition of Ontop mapping for weather measurements and their corresponding SQL query (on the left ) and the SPARQL query (on the right) which is enabled by this mapping.  
+In order to include the RDF representation of the sensor data stored in relational tables, we use the Ontop Virtual Knowledge Graph system \cite{xiao2020virtual} which relies on R2RML mappings and translates SPARQL queries expressed over the knowledge graphs into SQL queries executed by the PostgreSQL database. In Fig. \ref{zamg_mapping} we present an example. It shows the definition of Ontop mapping for weather measurements and their corresponding SQL query. 
 
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{images/ZAMG_mapping.png}
-  \caption{Weather data mapping and query.}
+  \includegraphics[scale=0.35]{images/ZAMG_mapping_obda.png}
+  \caption{Weather data Relation-to-RDF mapping.}
   \label{zamg_mapping}
 \end{figure}
+
+
+This simple mapping enables running relevant SPARQL queries on top of the PostgresSQL database without the overhead of RDF data conversion and storage. An example of such query based on this mapping is depicted in Fig. \ref{zamg_sparql}.  
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{images/ZAMG_mapping_sparql.png}
+  \caption{SPARQL query using ontology-based data access layer.}
+  \label{zamg_sparql}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusion and Future Work}
 
-Complex interdependencies of infrastructure elements and service networks within the CRISP KG inform us about the potential impact of different types of shocks and stresses. They can help us develop more effective response strategies to mitigate the effects of future crises. We are currently enriching the CRISP KG based on the proposed modeling approach presented in this paper and address the technical challenges of big data integration. The next step towards achieving semantic interoperability in crisis management use cases is the integration of relevant crisis management processes and including access control in order to secure sensitive data and processes in the knowledge graph.
+Complex interdependencies of infrastructure elements and service networks within the CRISP KG inform us about the potential impact of different types of shocks and stresses. By combining diverse data sources spanning heterogeneous granularities, we can develop more effective response strategies to mitigate the effects of future crises. We are currently enriching the CRISP KG based on the proposed modeling approach presented in this paper and address the technical challenges of big data integration. The next step towards achieving semantic interoperability in crisis management use cases is the integration of relevant crisis management processes and including access control in order to secure sensitive data and processes in the knowledge graph.
 
 
 
@@ -164,7 +182,7 @@ Complex interdependencies of infrastructure elements and service networks within
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acknowledgments}
-% The authors acknowledge support from the Austrian Research Promotion Agency's ICT of the Future Program (FFG Project No. 887554.)
+The authors acknowledge support from the Austrian Research Promotion Agency's ICT of the Future Program (FFG Project No. 887554.)
 \end{acknowledgments}
 
 %%
