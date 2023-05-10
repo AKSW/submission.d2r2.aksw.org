@@ -7,18 +7,15 @@ CONSTRUCT {
   <https://2023.d2r2.aksw.org/#submissions>
     schema:subEvent ?paperIri .
 
-  ?paperIri
+  ?paperIri a schema:Event ;
     dct:title ?title ;
-    schema:performer ?authorCollectionIri ;
-  .
+    dct:identifier ?paperId ;
+    schema:performer ?authorCollectionIri .
 
-  ?authorCollectionIri
-    ?authorMember ?authorIri ;
-  .
+  ?authorCollectionIri ?authorMember ?authorIri .
 
-  ?authorIri
-    foaf:name ?authorName ;
-  .
+  ?authorIri a foaf:Person ;
+    foaf:name ?authorName .
 }
 #SELECT ?entry ?id ?paper
 WHERE {
