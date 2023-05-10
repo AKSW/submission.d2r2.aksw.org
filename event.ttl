@@ -288,6 +288,7 @@ d2r2-23-pc:NenadKrdavac
 <https://www.tib.eu/>
     a foaf:Document, foaf:Organization ;
     rdfs:label "Technische Informationsbibliothek (TIB)"@de, "Technische Informationsbibliothek (TIB)"@en ;
+    schema:location <https://www.tib.eu/#address> ;
     foaf:homepage <https://www.tib.eu/> .
 
 <https://www.uni-hannover.de/>
@@ -295,10 +296,25 @@ d2r2-23-pc:NenadKrdavac
     rdfs:label "Gottfried Wilhelm Leibniz Universität Hannover"@de, "Gottfried Wilhelm Leibniz University Hannover"@en ;
     foaf:homepage <https://www.uni-hannover.de/> .
 
+<https://www.tib.eu/#address>
+    schema:addressCountry "Germany" ;
+    schema:addressLocality "Hannover" ;
+    schema:postalCode "30167" ;
+    schema:streetAddress "Welfengarten 1 B" ;
+    a schema:PostalAddress .
+
 <https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-digital-libraries/staff/soeren-auer>
     a foaf:Document .
 
 <https://www.uni-hamburg.de/>
     a foaf:Organization ;
     rdfs:label "University of Hamburg"@de, "University of Hamburg"@en ;
+    schema:location <https://www.uni-hamburg.de/#address> ;
     foaf:homepage <https://www.uni-hamburg.de> .
+
+<https://www.uni-hamburg.de/#address>
+    schema:addressCountry "Germany" ;
+    schema:addressLocality "Hamburg" ;
+    schema:postalCode "20148" ;
+    schema:streetAddress "Mittelweg 177" ;
+    a schema:PostalAddress .
