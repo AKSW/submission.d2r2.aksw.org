@@ -54,8 +54,8 @@
 %% CC-BY is default license.
 \copyrightyear{2023}
 \copyrightclause{Copyright for this paper by its authors.
-	Use permitted under Creative Commons License Attribution 4.0
-	International (CC BY 4.0).}
+  Use permitted under Creative Commons License Attribution 4.0
+  International (CC BY 4.0).}
 
 %%
 %% This command is for the conference information
@@ -69,26 +69,26 @@
 %% The "author" command and its associated commands are used to define
 %% the authors and their affiliations.
 \author[1,2]{Martin B\"ockling}[%
-	orcid=0000-0002-1143-4686,
-	email=martin.boeckling@students.uni-mannheim.de,
+orcid=0000-0002-1143-4686,
+email=martin.boeckling@students.uni-mannheim.de,
 ]
 \cormark[1]
 \fnmark[1]
 \address[1]{University of Mannheim, Data and Web Science Group,
-	B6, 26, 68161 Mannheim}
+  B6, 26, 68161 Mannheim}
 \address[2]{SAP SE,
-	Dietmar-Hopp-Allee 16, 69190 Walldorf}
+  Dietmar-Hopp-Allee 16, 69190 Walldorf}
 
 \author[1]{Heiko Paulheim}[%
-	orcid=0000-0003-4386-8195,
-	email=heiko@informatik.uni-mannheim.de,
+orcid=0000-0003-4386-8195,
+email=heiko@informatik.uni-mannheim.de,
 ]
 \cormark[1]
 \fnmark[1]
 
 \author[2]{Sarah Detzler}[%
-	orcid=0000-0002-7504-8856,
-	email=sarah.detzler@sap.com,
+orcid=0000-0002-7504-8856,
+email=sarah.detzler@sap.com,
 ]
 \cormark[1]
 \fnmark[1]
@@ -101,17 +101,17 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-	The frequency of wildfires increases yearly and poses a constant threat to the environment and human beings. Different factors, for example surrounding infrastructure to an area (e.g., campfire sites or power lines) contribute to the occurrence of wildfires. In this paper, we propose using a \gls*{stkg} based on \gls*{osm} data for modeling such infrastructure. Based on that knowledge graph, we use the RDF2vec approach to create embeddings for predicting wildfires, and we align different vector spaces generated at each temporal step by partial rotation. In an experimental study, we determine the effect of the surrounding infrastructure by comparing different data composition strategies, which involve a prediction based on tabular data, a combination of tabular data and embeddings, and solely embeddings. We show that the incorporation of the \gls*{stkg} increases the prediction quality of wildfires.
+  The frequency of wildfires increases yearly and poses a constant threat to the environment and human beings. Different factors, for example surrounding infrastructure to an area (e.g., campfire sites or power lines) contribute to the occurrence of wildfires. In this paper, we propose using a \gls*{stkg} based on \gls*{osm} data for modeling such infrastructure. Based on that knowledge graph, we use the RDF2vec approach to create embeddings for predicting wildfires, and we align different vector spaces generated at each temporal step by partial rotation. In an experimental study, we determine the effect of the surrounding infrastructure by comparing different data composition strategies, which involve a prediction based on tabular data, a combination of tabular data and embeddings, and solely embeddings. We show that the incorporation of the \gls*{stkg} increases the prediction quality of wildfires.
 \end{abstract}
 
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
 \begin{keywords}
-	Knowledge Graph Embeddings \sep
-	Spatio-Temporal Knowledge Graph \sep
-	RDF2vec \sep
-	Wildfire Prediction
+  Knowledge Graph Embeddings \sep
+  Spatio-Temporal Knowledge Graph \sep
+  RDF2vec \sep
+  Wildfire Prediction
 \end{keywords}
 
 %%
@@ -132,9 +132,9 @@ Given the presented papers that were available for our research, the methodology
 \section{Approach} \label{cha:Approach}
 For this paper, the approach for our research results in three different research datasets that we use for predicting wildfires. The first dataset, named BaseCase dataset, includes tabular data from a variety of different data sources, which we integrate by using a spatial grid. This approach is consistent with the current state of the art and is used similarly by the presented work in section \ref{sec:RelatedWork} \cite{Nami.2018, Kim.2019}. A general overview of our approach can be found in figure \ref{fig:Approach}. The second dataset, which is named HybridCase dataset, uses as a base for the dataset structure the BaseCase dataset. In addition, the embeddings derived from the \gls*{stkg} using RDF2vec are introduced to the dataset as new columns. The third dataset is using solely the embeddings derived from the constructed \glspl*{stkg} by integrating every dataset into the \gls*{kg}. In the following paragraphs, the procedure for our paper is outlined in detail based on figure~\ref{fig:Approach}.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 	\centering
-	\includegraphics[width = 1\textwidth]{img/Approach.png}
+	\includegraphics[width = 0.85\textwidth]{img/Approach.png}
 	\caption{Approach for the wildfire detection performed in this paper}
 	\label{fig:Approach}
 \end{figure}
@@ -149,9 +149,9 @@ For the landscape data, the dataset has data for the years 2011, 2013, 2016 and 
 
 For the creation of our \gls*{stkg}, we incorporate three different data preparations depending on the structure of the incorporated datasets. The base for our \gls*{stkg} is the neighbor relation between each spatial grid cell. For each of the individual grid cells, the neighboring relation is modeled. Between the \gls*{osm} dataset with its geometries and the individual grid cells, the relationship is determined by using the \gls*{de-9im} method \cite{Clementini.1993}. From the methodology, in total seven different relations are derived: Contains, covered by, covers, crosses, intersects, overlaps and touches. An explanatory situation for the modeled relation is displayed in figure \ref{fig:RelationKG}.
 
-\begin{figure}[ht]
+\begin{figure}[t]
 	\centering
-	\includegraphics[width = 1\textwidth]{img/RelationGrid.png}
+	\includegraphics[width = 0.8\textwidth]{img/RelationGrid.png}
 	\caption{\gls*{kg} relation modeled from datasets}
 	\label{fig:RelationKG}
 \end{figure}
@@ -168,39 +168,42 @@ After the creation of the datasets, we classify wildfire events using the \gls*{
 To evaluate the performance for all different datasets, we determine the effect of the classification model by comparing the performance with the F1 score, as it provides a better representation than the accuracy \cite{Maimon.2010}. In subsection \ref{cha:EvaluationProtocol} we determine the exact testing procedure for all dataset constellations.
 
 \subsection{Evaluation Protocol}\label{cha:EvaluationProtocol}
-For the evaluation of the different datasets, we define the train split for all data values from 2010 to 2019. The test dataset contains all rows related to the years 2020 and 2021. As the occurrences of wildfires are with only 0.58\% present in the train dataset, we consider a Random Oversampling to rebalance the train dataset. As we tune our hyperparameters, we perform a cross validation of the data. Due to the time dependency in the data, we cannot directly use a cross validation function, as we could base our prediction on future values for the past. Therefore, we split the dataset based on the time for our cross validation. For each training iteration, we only rebalance the dataset that is used for training, whereas the datasets for validation and test are not rebalanced.
+For the evaluation of the different datasets, we define the train split for all data values from 2010 to 2019. The test dataset contains all rows related to the years 2020 and 2021. As the occurrences of wildfires are with only 0.58\% present in the train dataset, we consider a Random Oversampling to rebalance the train dataset. As we tune our hyperparameters, we perform a cross validation of the data. Due to the time dependency in the data, we cannot directly use a cross validation function, as we could base our prediction on future values for the past. Therefore, we split the dataset based on the time for our cross validation. For each training iteration, we only rebalance the dataset that is used for training, whereas the datasets for validation and test are not rebalanced. 
 
-For the hyperparameter tuning, we use a subset of the available parameters within \gls*{xgb}. The selection of the hyperparameter variables with its ranges is based on the recommendation from the official \gls*{xgb} website. Under the \href{https://xgboost.readthedocs.io/en/stable/tutorials/param_tuning.html}{\gls*{xgb} website}, the recommended variables are outlined. The \gls*{xgb} classifier uses a fixed seed to make the results reproducible. As an objective for the algorithm, we use the binary:logistic configuration together with the parameter tree\_method and value hist. For the overall validation routine, we use the F1 score to determine the best parameter combination, to determine the optimal parameters for the different dataset combinations. In table \ref{tab:parameterSetting} the overview of the tuned parameters with the value range can be found.
+For the hyperparameter tuning, we use a subset of the available parameters within \gls*{xgb}. The selection of the hyperparameter variables with its ranges is based on the recommendation from the official \gls*{xgb} website\footnote{Under the \href{https://xgboost.readthedocs.io/en/stable/tutorials/param_tuning.html}{\gls*{xgb} website}, the recommended variables are outlined}. The \gls*{xgb} classifier uses a fixed seed to make the results reproducible. As an objective for the algorithm, we use the binary:logistic configuration together with the parameter tree\_method and value hist. For the overall validation routine, we use the F1 score to determine the best parameter combination, to determine the optimal parameters for the different dataset combinations \footnote{The search space for the parameter optimization includes the parameters min\_child\_weight: [0, 100], max\_depth: [0, 50], subsample: [0.01, 1], colsample\_bytree: [0.01, 1.0], gamma: [0, 50], n\_estimators: [50, 1000]}. 
 
-\begin{table*}[ht]
-	\caption{Hyperparameter selection together with parameter range}
-	\label{tab:parameterSetting}
-	\begin{tabular}{p{0.65\textwidth}p{0.3\textwidth}}
-		\toprule
-		Parameter          & Parameter range \\
-		\midrule
-		min\_child\_weight & [0, 100]        \\
-		max\_depth         & [0, 50]         \\
-		subsample          & [0.01, 1]       \\
-		colsample\_bytree  & [0.01, 1.0]     \\
-		gamma              & [0, 50]         \\
-		n\_estimators      & [50, 1000]      \\
-		\bottomrule
-	\end{tabular}
-\end{table*}
+
+% In table \ref{tab:parameterSetting} the overview of the tuned parameters with the value range can be found.
+
+% \begin{table*}[h]
+% 	\caption{Hyperparameter selection together with parameter range}
+% 	\label{tab:parameterSetting}
+% 	\begin{tabular}{p{0.65\textwidth}p{0.3\textwidth}}
+% 		\toprule
+% 		Parameter & Parameter range\\
+% 		\midrule
+% 		min\_child\_weight &  [0, 100]\\
+% 		max\_depth & [0, 50] \\
+% 		subsample & [0.01, 1] \\
+% 		colsample\_bytree & [0.01, 1.0] \\
+%         gamma & [0, 50] \\
+%         n\_estimators & [50, 1000] \\
+% 		\bottomrule
+% 	\end{tabular}
+% \end{table*}
 
 \subsection{Results}\label{cha:Results}
 For the comparison between the different dataset constellations, we compare in total four different datasets. The dataset BaseCase does involve the tabular data as described in subsection \ref{cha:Approach}. For the hybrid data constellation, we combine the embeddings together with the tabular data represented in the HybridCase dataset. The third data constellation is based solely on the generated embeddings derived from the constructed \gls*{stkg} using all datasets. In table \ref{tab:resultModeling} the results of the wildfire prediction after the hyperparameter tuning are outlined.
-\begin{table*}[ht]
+\begin{table*}[t]
 	\caption{Model results after hyperparameter tuning, the highest F1 score is marked bold}
 	\label{tab:resultModeling}
-	\begin{tabular}{p{0.3\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.14\textwidth}}
+    \begin{tabular}{p{0.3\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.09\textwidth}p{0.14\textwidth}}
 		\toprule
-		Dataset \gls*{id} & True Negative & False Positive & False Negative & True \linebreak Positive & F1 Score                   \\
+		Dataset \gls*{id} & True Negative & False Positive & False Negative & True \linebreak Positive & F1 Score\\
 		\midrule
-		BaseCase          & 718,695       & 82,178         & 13,538         & 25,523                   & 0.3478$\pm$0.0010          \\
-		HybridCase        & 729,614       & 71,259         & 13,160         & 25,901                   & \textbf{0.3803}$\pm$0.0011 \\
-		NetworkCase       & 797,829       & 3,068          & 38,834         & 227                      & 0.0107$\pm$0.0002          \\
+		BaseCase & 718,695 & 82,178 & 13,538 & 25,523 & 0.3478$\pm$0.0010 \\
+		HybridCase & 729,614 & 71,259 & 13,160 & 25,901 & \textbf{0.3803}$\pm$0.0011 \\
+		NetworkCase & 797,829 & 3,068 & 38,834 & 227 & 0.0107$\pm$0.0002 \\
 		\bottomrule
 	\end{tabular}
 \end{table*}
@@ -208,9 +211,9 @@ For the comparison between the different dataset constellations, we compare in t
 %To put the results into context, we reflect our results critically in section \ref{cha:Discussion}. For the wildfire predictions, we discuss the limitations of our research together with possible expansion possibilities. Furthermore, we evaluate the results based on the presented works in section \ref{sec:RelatedWork}.
 
 \subsection{Discussion} \label{cha:Discussion}
-For the selection of all datasets used in this paper, a bias regarding the \gls*{ml} results is present, as not all possible influence factors of wildfires are included. For example, long-term drought factors or social economic data, which might have a long-term effect on wildfire occurrence, are not present in the datasets \cite{Littell.2018}. Therefore, each result derived from the modeling phase needs to be critically viewed, as not all necessary influence factors for wildfires are present within the data.
+For the selection of all datasets used in this paper, a bias regarding the \gls*{ml} results is present, as not all possible influence factors of wildfires are included. For example, long-term drought factors or social economic data, which might have a long-term effect on wildfire occurrence, are not present in the datasets \cite{Littell.2018}. Therefore, each result derived from the modeling phase needs to be critically viewed, as not all necessary influence factors for wildfires are present within the data. 
 
-The validity of the datasets used is only partially assessed. For the weather variables, the \gls*{scec}provides extreme values for a selection of weather variables \cite{StateClimateExtremesCommittee.2022}. A filtering of anomaly-based methods is not conducted, as it could have filtered out patterns of weather extremes contributing to wildfire occurrences.
+The validity of the datasets used is only partially assessed. For the weather variables, the \gls*{scec}provides extreme values for a selection of weather variables \cite{StateClimateExtremesCommittee.2022}. A filtering of anomaly-based methods is not conducted, as it could have filtered out patterns of weather extremes contributing to wildfire occurrences. 
 
 For our \gls*{stkg} we have involved a sample of \gls*{osm} data. Compared to WorldKG created by \cite{Tempelmeier.2021} we only use a subset of data types specifically related to wildfire causes in California. This selection proposes the situation that not all possible geographic relations captured in \gls*{osm} have been determined within the territory of California. Furthermore, the \gls*{osm} data is derived on a yearly basis due to the limited performance of the \gls*{osm} \gls*{api}. As \gls*{osm} is a community-based platform similar to Wikipedia, its data is not guaranteed as complete and correct. Based on the curation process of \gls*{osm}, inconsistent data can be present as well as missing information for existing spatial properties in reality \cite{Basiri.2016}.
 
@@ -229,7 +232,7 @@ For further research, additional vectorization techniques can be tested regardin
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
 \begin{acknowledgments}
-	Computing resources have been funded by SAP SE. Map data copyrighted OpenStreetMap contributors and available from \url{https://www.openstreetmap.org}.
+  Computing resources have been funded by SAP SE. Map data copyrighted OpenStreetMap contributors and available from \url{https://www.openstreetmap.org}.
 
 \end{acknowledgments}
 
@@ -243,7 +246,7 @@ For further research, additional vectorization techniques can be tested regardin
 
 \section{Online Resources}
 
-The sources for the paper are available via the following GitHub repository: \url{https://github.com/MartinBoeckling/WildfirePredictionSTKG}.
+The sources for the paper are available via \href{https://github.com/MartinBoeckling/WildfirePredictionSTKG}{GitHub}.
 
 
 \end{document}
