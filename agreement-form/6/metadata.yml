@@ -1,0 +1,21 @@
+paper3:
+  title: "A Knowledge Graph Perspective on Supply Chain Resilience"
+  authors:
+    - name: Yushan Liu
+    - name: Bailan He
+    - name: Marcel Hildebrandt
+    - name: Maximilian Buchner
+    - name: Daniela Inzko
+    - name: Roger Wernert
+    - name: Emanuel Weigel
+    - name: Dagmar Beyer
+    - name: Martin Berbalk
+    - name: Volker Tresp
+  corresponding_author:
+    name: Yushan Liu
+    email: yushan.liu@siemens.com
+    affiliation: Siemens AG
+    address: Otto-Hahn-Ring 6, 81739 Munich, Germany
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
