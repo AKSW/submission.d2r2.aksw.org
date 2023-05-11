@@ -1,5 +1,5 @@
 __pycache__
-index
-metadata.json
-metadata.yml
-paper.ttl
+/index
+/metadata.json
+/metadata.yml
+/paper.ttl
