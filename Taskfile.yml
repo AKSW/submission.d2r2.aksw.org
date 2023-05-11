@@ -11,6 +11,7 @@ tasks:
     - task -a
 
   compile:
+    - task: paper-data:join
     - task: paper-data:convert
     - task: index:clone
     - task: index:build
