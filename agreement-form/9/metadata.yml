@@ -1,0 +1,14 @@
+paper01:
+  title: "Wildfire Prediction using Spatio-Temporal Knowledge Graphs"
+  authors:
+    - name: Martin Böckling
+    - name: Heiko Paulheim
+    - name: Sarah Detzler
+  corresponding_author:
+    name: Martin Böckling
+    email: martin.boeckling.gast@uni-mannheim.de
+    affiliation: University of Mannheim, Data and Web Science Group
+    address: B6, 26 68159 Mannheim
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
