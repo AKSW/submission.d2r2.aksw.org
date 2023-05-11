@@ -52,7 +52,10 @@ jobs:
       with:
         name: Pipeline artifacts
         path: CEUR/Package/*.zip
+    - name: Patch page with papers
+      run: |
+        cp CEUR/Package/D2R2-23/* index/_site/Vol-XXX/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: CEUR/Package/D2R2-23 # The folder the action should deploy.
+        folder: index/_site/ # The folder the action should deploy.
