@@ -54,6 +54,7 @@ jobs:
         path: CEUR/Package/*.zip
     - name: Patch page with papers
       run: |
+        ls -la
         cp CEUR/Package/D2R2-23/* index/_site/Vol-XXX/
     - name: Deploy 🚀
       uses: peaceiris/actions-gh-pages@v3
