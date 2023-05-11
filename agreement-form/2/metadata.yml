@@ -1,0 +1,15 @@
+paper02:
+  title: "From Data to Insights: Constructing Spatiotemporal Knowledge Graphs for City Resilience Use Cases"
+  authors:
+    - name: Amin Anjomshoaa
+    - name: Hannah Schuster
+    - name: Johannes Wachs
+    - name: Axel Polleres
+  corresponding_author:
+    name: Amin Anjomshoaa
+    email: Amin.Anjomshoaa@wu.ac.at
+    affiliation: Vienna University of Economics and Business
+    address: Welthandelsplatz 1, 1020 Vienna, Austria
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
