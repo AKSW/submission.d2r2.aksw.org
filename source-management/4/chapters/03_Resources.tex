@@ -1,0 +1,22 @@
+\subsection{GTA}
+The Global Trade Alerts (GTA) dataset~\cite{gta_paper} is a comprehensive database that tracks trade-related policy measures implemented by nation-states around the world since 2008. The dataset contains a wide range of measures, including tariff and non-tariff barriers, export taxes and subsidies, import measures, and other trade-related policies.
+It is updated in real-time and is provided as open data\footnote{\url{https://www.globaltradealert.org/}}. 
+
+One of the key strengths of the GTA dataset is its focus on the affected jurisdictions, providing details on both the implementing and the affected jurisdiction for each measure. Additionally, it covers measures that impact the flow of goods and services across borders, such as taxation and exim quotas. Moreover, GTA provides information on the broader context of each measure, including the sectors and industries that are most affected by their implementation, as well regulatory political and economic factors that may be driving changes in trade policy. Overall, these aspects allow for analysing the impact of trade regulations on specific countries or regions, and to identify patterns and trends in trade policy over time on the global economy.
+
+\subsection{ACLED}
+The Armed Conflict Location \& Event Data Project (ACLED)~\cite{acled_paper} is a non-profit organization that collects and analyses data on political violence and protest events across the world.
+
+ACLED uses a combination of media monitoring, crowd-sourcing, and other open-source data collection methods to track and record information about incidents of political violence, including battles, bombings, riots, and protests. The organization's database covers more than 200 countries and provides information on the actors involved in each conflict, as well as the location, date, type, and intensity of the violence. The dataset is updated weekly and can be accessed via an API or downloaded as a data dump\footnote{\url{https://acleddata.com/data-export-tool/}}.
+
+\subsection{Relationships between GTA and ACLED}
+There are several possible relationships and dependencies between the ACLED dataset and the GTA dataset, e.g.:
+\begin{description}
+    \item[ACLED events can lead to trade sanctions] If a country experiences political violence or conflict, other countries may respond by imposing trade sanctions or embargoes. For example, if a country is involved in a civil war, other countries may decide to stop trading with it. % until the conflict is resolved. 
+    In this case, ACLED informs on the political violence that led to the sanctions, while GTA tracks the implemented trade policies.
+    \item[Trade policies can exacerbate conflicts] Trade policies can sometimes exacerbate political conflicts or tensions between countries. E.g., the trade restrictions that one country imposes on another could lead to economic hardship and political instability, which could in turn lead to conflicts. In this case, GTA informs on the trade policies that contributed to the conflict, while ACLED tracks the specific instances of violence or unrest.
+    \item[ACLED events can disrupt trade flows] Political violence or unrest can disrupt trade flows between countries. For example, an attack on a major transportation hub could lead to delays or disruptions in trade. In this case, ACLED informs on the incidents of violence that disrupted trade flows, while GTA tracks the affected trade policies or agreements.
+\end{description}
+
+Overall, using the ACLED and GTA datasets together provides a comprehensive picture of the relationship between political conflict and international trade.
+By analysing these datasets in tandem, policymakers and researchers can better understand the ways in which political violence and trade policies are interconnected, and develop more effective strategies for promoting peace and economic growth.
