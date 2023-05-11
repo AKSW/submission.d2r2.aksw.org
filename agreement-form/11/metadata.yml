@@ -1,0 +1,19 @@
+paper01:
+  title: "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG"
+  authors:
+    - name: Susmita Gangopadhyay 
+    - name: Katarina Boland
+    - name: Danilo Dessí
+    - name: Stefan Dietze
+    - name: Pavlos Fafalios
+    - name: Andon Tchechmedjiev 
+    - name: Konstantin Todorov 
+    - name: Hajira Jabeen
+  corresponding_author:
+    name: Susmita Gangopadhyay 
+    email: susmita.gangopadhyay@gesis.org
+    affiliation: GESIS - Leibniz-Institut für Sozialwissenschaften 
+    address: Unter Sachsenhausen 6-8, 50667 Köln
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
