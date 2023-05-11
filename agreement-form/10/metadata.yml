@@ -1,0 +1,17 @@
+paper10:
+  title: "Base platform for knowledge graphs with free software"
+  authors:
+    - name: Simon Bin
+    - name: Claus Stadler
+    - name: Norman Radtke
+    - name: Kurt Junghanns
+    - name: Sabine Gründer-Fahrer
+    - name: Michael Martin
+  corresponding_author:
+    name: Simon Bin
+    email: sbin@informatik.uni-leipzig.de
+    affiliation: Institute of Applied Informatics (InfAI)
+    address: Goerdelerring 9, 04109 Leipzig
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
