@@ -56,6 +56,7 @@ jobs:
       run: |
         cp CEUR/Package/D2R2-23/* index/_site/Vol-XXX/
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        folder: index/_site/ # The folder the action should deploy.
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./index/_site/
