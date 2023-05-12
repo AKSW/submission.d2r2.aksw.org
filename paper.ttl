@@ -1,0 +1,523 @@
+@prefix schema: <http://schema.org/> .
+@prefix aksw: <http://aksw.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix d2r2p: <https://2023.d2r2.aksw.org/#> .
+@prefix d2r2-23-pc: <https://2023.d2r2.aksw.org/program-committee/#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper1 .
+
+d2r2p:paper1  rdf:type      schema:Event ;
+        dcterms:title       "From Data to Insights: Constructing Spatiotemporal Knowledge Graphs for City Resilience Use Cases" ;
+        dcterms:identifier  "paper1" ;
+        schema:performer    d2r2p:paper1-authors .
+
+d2r2p:paper1-authors  rdf:_1  <https://2023.d2r2.aksw.org/#Amin%20Anjomshoaa> .
+
+<https://2023.d2r2.aksw.org/#Amin%20Anjomshoaa>
+        rdf:type   foaf:Person ;
+        foaf:name  "Amin Anjomshoaa" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper1 .
+
+d2r2p:paper1  rdf:type      schema:Event ;
+        dcterms:title       "From Data to Insights: Constructing Spatiotemporal Knowledge Graphs for City Resilience Use Cases" ;
+        dcterms:identifier  "paper1" ;
+        schema:performer    d2r2p:paper1-authors .
+
+d2r2p:paper1-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Hannah%20Schuster> .
+
+<https://2023.d2r2.aksw.org/#Hannah%20Schuster>
+        rdf:type   foaf:Person ;
+        foaf:name  "Hannah Schuster" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper1 .
+
+d2r2p:paper1  rdf:type      schema:Event ;
+        dcterms:title       "From Data to Insights: Constructing Spatiotemporal Knowledge Graphs for City Resilience Use Cases" ;
+        dcterms:identifier  "paper1" ;
+        schema:performer    d2r2p:paper1-authors .
+
+d2r2p:paper1-authors  rdf:_3  <https://2023.d2r2.aksw.org/#Johannes%20Wachs> .
+
+<https://2023.d2r2.aksw.org/#Johannes%20Wachs>
+        rdf:type   foaf:Person ;
+        foaf:name  "Johannes Wachs" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper1 .
+
+d2r2p:paper1  rdf:type      schema:Event ;
+        dcterms:title       "From Data to Insights: Constructing Spatiotemporal Knowledge Graphs for City Resilience Use Cases" ;
+        dcterms:identifier  "paper1" ;
+        schema:performer    d2r2p:paper1-authors .
+
+d2r2p:paper1-authors  rdf:_4  <https://2023.d2r2.aksw.org/#Axel%20Polleres> .
+
+<https://2023.d2r2.aksw.org/#Axel%20Polleres>
+        rdf:type   foaf:Person ;
+        foaf:name  "Axel Polleres" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper2 .
+
+d2r2p:paper2  rdf:type      schema:Event ;
+        dcterms:title       "Dynamic Representations of Global Crises: Creation and Analysis of a Temporal Knowledge Graph for Conflicts, Trade and Value Networks" ;
+        dcterms:identifier  "paper2" ;
+        schema:performer    d2r2p:paper2-authors .
+
+d2r2p:paper2-authors  rdf:_1  d2r2-23-pc:JuliaGastinger .
+
+d2r2-23-pc:JuliaGastinger
+        rdf:type   foaf:Person ;
+        foaf:name  "Julia Gastinger" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper2 .
+
+d2r2p:paper2  rdf:type      schema:Event ;
+        dcterms:title       "Dynamic Representations of Global Crises: Creation and Analysis of a Temporal Knowledge Graph for Conflicts, Trade and Value Networks" ;
+        dcterms:identifier  "paper2" ;
+        schema:performer    d2r2p:paper2-authors .
+
+d2r2p:paper2-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Nils%20Steinert> .
+
+<https://2023.d2r2.aksw.org/#Nils%20Steinert>
+        rdf:type   foaf:Person ;
+        foaf:name  "Nils Steinert" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper2 .
+
+d2r2p:paper2  rdf:type      schema:Event ;
+        dcterms:title       "Dynamic Representations of Global Crises: Creation and Analysis of a Temporal Knowledge Graph for Conflicts, Trade and Value Networks" ;
+        dcterms:identifier  "paper2" ;
+        schema:performer    d2r2p:paper2-authors .
+
+d2r2p:paper2-authors  rdf:_3  aksw:SabineGruenderFahrer .
+
+aksw:SabineGruenderFahrer
+        rdf:type   foaf:Person ;
+        foaf:name  "Sabine Gründer-Fahrer" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper2 .
+
+d2r2p:paper2  rdf:type      schema:Event ;
+        dcterms:title       "Dynamic Representations of Global Crises: Creation and Analysis of a Temporal Knowledge Graph for Conflicts, Trade and Value Networks" ;
+        dcterms:identifier  "paper2" ;
+        schema:performer    d2r2p:paper2-authors .
+
+d2r2p:paper2-authors  rdf:_4  aksw:MichaelMartin .
+
+aksw:MichaelMartin  rdf:type  foaf:Person ;
+        foaf:name  "Michael Martin" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_1  <https://2023.d2r2.aksw.org/#Yushan%20Liu> .
+
+<https://2023.d2r2.aksw.org/#Yushan%20Liu>
+        rdf:type   foaf:Person ;
+        foaf:name  "Yushan Liu" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Bailan%20He> .
+
+<https://2023.d2r2.aksw.org/#Bailan%20He>
+        rdf:type   foaf:Person ;
+        foaf:name  "Bailan He" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_3  <https://2023.d2r2.aksw.org/#Marcel%20Hildebrandt> .
+
+<https://2023.d2r2.aksw.org/#Marcel%20Hildebrandt>
+        rdf:type   foaf:Person ;
+        foaf:name  "Marcel Hildebrandt" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_4  <https://2023.d2r2.aksw.org/#Maximilian%20Buchner> .
+
+<https://2023.d2r2.aksw.org/#Maximilian%20Buchner>
+        rdf:type   foaf:Person ;
+        foaf:name  "Maximilian Buchner" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_5  <https://2023.d2r2.aksw.org/#Daniela%20Inzko> .
+
+<https://2023.d2r2.aksw.org/#Daniela%20Inzko>
+        rdf:type   foaf:Person ;
+        foaf:name  "Daniela Inzko" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_6  <https://2023.d2r2.aksw.org/#Roger%20Wernert> .
+
+<https://2023.d2r2.aksw.org/#Roger%20Wernert>
+        rdf:type   foaf:Person ;
+        foaf:name  "Roger Wernert" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_7  <https://2023.d2r2.aksw.org/#Emanuel%20Weigel> .
+
+<https://2023.d2r2.aksw.org/#Emanuel%20Weigel>
+        rdf:type   foaf:Person ;
+        foaf:name  "Emanuel Weigel" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_8  <https://2023.d2r2.aksw.org/#Dagmar%20Beyer> .
+
+<https://2023.d2r2.aksw.org/#Dagmar%20Beyer>
+        rdf:type   foaf:Person ;
+        foaf:name  "Dagmar Beyer" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_9  <https://2023.d2r2.aksw.org/#Martin%20Berbalk> .
+
+<https://2023.d2r2.aksw.org/#Martin%20Berbalk>
+        rdf:type   foaf:Person ;
+        foaf:name  "Martin Berbalk" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper3 .
+
+d2r2p:paper3  rdf:type      schema:Event ;
+        dcterms:title       "A Knowledge Graph Perspective on Supply Chain Resilience" ;
+        dcterms:identifier  "paper3" ;
+        schema:performer    d2r2p:paper3-authors .
+
+d2r2p:paper3-authors  rdf:_10  <https://2023.d2r2.aksw.org/#Volker%20Tresp> .
+
+<https://2023.d2r2.aksw.org/#Volker%20Tresp>
+        rdf:type   foaf:Person ;
+        foaf:name  "Volker Tresp" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper4 .
+
+d2r2p:paper4  rdf:type      schema:Event ;
+        dcterms:title       "A News Recommendation System for Environmental Risk Management" ;
+        dcterms:identifier  "paper4" ;
+        schema:performer    d2r2p:paper4-authors .
+
+d2r2p:paper4-authors  rdf:_1  <https://2023.d2r2.aksw.org/#Hamed%20Aboutorab> .
+
+<https://2023.d2r2.aksw.org/#Hamed%20Aboutorab>
+        rdf:type   foaf:Person ;
+        foaf:name  "Hamed Aboutorab" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper4 .
+
+d2r2p:paper4  rdf:type      schema:Event ;
+        dcterms:title       "A News Recommendation System for Environmental Risk Management" ;
+        dcterms:identifier  "paper4" ;
+        schema:performer    d2r2p:paper4-authors .
+
+d2r2p:paper4-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Ran%20Yu> .
+
+<https://2023.d2r2.aksw.org/#Ran%20Yu>
+        rdf:type   foaf:Person ;
+        foaf:name  "Ran Yu" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper4 .
+
+d2r2p:paper4  rdf:type      schema:Event ;
+        dcterms:title       "A News Recommendation System for Environmental Risk Management" ;
+        dcterms:identifier  "paper4" ;
+        schema:performer    d2r2p:paper4-authors .
+
+d2r2p:paper4-authors  rdf:_3  <https://2023.d2r2.aksw.org/#Alishiba%20Dsouza> .
+
+<https://2023.d2r2.aksw.org/#Alishiba%20Dsouza>
+        rdf:type   foaf:Person ;
+        foaf:name  "Alishiba Dsouza" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper4 .
+
+d2r2p:paper4  rdf:type      schema:Event ;
+        dcterms:title       "A News Recommendation System for Environmental Risk Management" ;
+        dcterms:identifier  "paper4" ;
+        schema:performer    d2r2p:paper4-authors .
+
+d2r2p:paper4-authors  rdf:_4  <https://2023.d2r2.aksw.org/#Morteza%20Saberi> .
+
+<https://2023.d2r2.aksw.org/#Morteza%20Saberi>
+        rdf:type   foaf:Person ;
+        foaf:name  "Morteza Saberi" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper4 .
+
+d2r2p:paper4  rdf:type      schema:Event ;
+        dcterms:title       "A News Recommendation System for Environmental Risk Management" ;
+        dcterms:identifier  "paper4" ;
+        schema:performer    d2r2p:paper4-authors .
+
+d2r2p:paper4-authors  rdf:_5  <https://2023.d2r2.aksw.org/#Omar%20Khadeer%20Hussain> .
+
+<https://2023.d2r2.aksw.org/#Omar%20Khadeer%20Hussain>
+        rdf:type   foaf:Person ;
+        foaf:name  "Omar Khadeer Hussain" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper5 .
+
+d2r2p:paper5  rdf:type      schema:Event ;
+        dcterms:title       "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+        dcterms:identifier  "paper5" ;
+        schema:performer    d2r2p:paper5-authors .
+
+d2r2p:paper5-authors  rdf:_1  <https://2023.d2r2.aksw.org/#Martin%20B%C3%B6ckling> .
+
+<https://2023.d2r2.aksw.org/#Martin%20B%C3%B6ckling>
+        rdf:type   foaf:Person ;
+        foaf:name  "Martin Böckling" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper5 .
+
+d2r2p:paper5  rdf:type      schema:Event ;
+        dcterms:title       "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+        dcterms:identifier  "paper5" ;
+        schema:performer    d2r2p:paper5-authors .
+
+d2r2p:paper5-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Heiko%20Paulheim> .
+
+<https://2023.d2r2.aksw.org/#Heiko%20Paulheim>
+        rdf:type   foaf:Person ;
+        foaf:name  "Heiko Paulheim" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper5 .
+
+d2r2p:paper5  rdf:type      schema:Event ;
+        dcterms:title       "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+        dcterms:identifier  "paper5" ;
+        schema:performer    d2r2p:paper5-authors .
+
+d2r2p:paper5-authors  rdf:_3  <https://2023.d2r2.aksw.org/#Sarah%20Detzler> .
+
+<https://2023.d2r2.aksw.org/#Sarah%20Detzler>
+        rdf:type   foaf:Person ;
+        foaf:name  "Sarah Detzler" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
+
+d2r2p:paper6  rdf:type      schema:Event ;
+        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:identifier  "paper6" ;
+        schema:performer    d2r2p:paper6-authors .
+
+d2r2p:paper6-authors  rdf:_1  aksw:SimonBin .
+
+aksw:SimonBin  rdf:type  foaf:Person ;
+        foaf:name  "Simon Bin" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
+
+d2r2p:paper6  rdf:type      schema:Event ;
+        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:identifier  "paper6" ;
+        schema:performer    d2r2p:paper6-authors .
+
+d2r2p:paper6-authors  rdf:_2  aksw:ClausStadler .
+
+aksw:ClausStadler  rdf:type  foaf:Person ;
+        foaf:name  "Claus Stadler" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
+
+d2r2p:paper6  rdf:type      schema:Event ;
+        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:identifier  "paper6" ;
+        schema:performer    d2r2p:paper6-authors .
+
+d2r2p:paper6-authors  rdf:_3  aksw:NormanRadtke .
+
+aksw:NormanRadtke  rdf:type  foaf:Person ;
+        foaf:name  "Norman Radtke" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
+
+d2r2p:paper6  rdf:type      schema:Event ;
+        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:identifier  "paper6" ;
+        schema:performer    d2r2p:paper6-authors .
+
+d2r2p:paper6-authors  rdf:_4  <https://2023.d2r2.aksw.org/#Kurt%20Junghanns> .
+
+<https://2023.d2r2.aksw.org/#Kurt%20Junghanns>
+        rdf:type   foaf:Person ;
+        foaf:name  "Kurt Junghanns" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
+
+d2r2p:paper6  rdf:type      schema:Event ;
+        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:identifier  "paper6" ;
+        schema:performer    d2r2p:paper6-authors .
+
+d2r2p:paper6-authors  rdf:_5  aksw:SabineGruenderFahrer .
+
+aksw:SabineGruenderFahrer
+        rdf:type   foaf:Person ;
+        foaf:name  "Sabine Gründer-Fahrer" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
+
+d2r2p:paper6  rdf:type      schema:Event ;
+        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:identifier  "paper6" ;
+        schema:performer    d2r2p:paper6-authors .
+
+d2r2p:paper6-authors  rdf:_6  aksw:MichaelMartin .
+
+aksw:MichaelMartin  rdf:type  foaf:Person ;
+        foaf:name  "Michael Martin" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_1  <https://2023.d2r2.aksw.org/#Susmita%20Gangopadhyay> .
+
+<https://2023.d2r2.aksw.org/#Susmita%20Gangopadhyay>
+        rdf:type   foaf:Person ;
+        foaf:name  "Susmita Gangopadhyay" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Katarina%20Boland> .
+
+<https://2023.d2r2.aksw.org/#Katarina%20Boland>
+        rdf:type   foaf:Person ;
+        foaf:name  "Katarina Boland" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_3  <https://2023.d2r2.aksw.org/#Danilo%20Dess%C3%AD> .
+
+<https://2023.d2r2.aksw.org/#Danilo%20Dess%C3%AD>
+        rdf:type   foaf:Person ;
+        foaf:name  "Danilo Dessí" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_4  <https://2023.d2r2.aksw.org/#Stefan%20Dietze> .
+
+<https://2023.d2r2.aksw.org/#Stefan%20Dietze>
+        rdf:type   foaf:Person ;
+        foaf:name  "Stefan Dietze" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_5  <https://2023.d2r2.aksw.org/#Pavlos%20Fafalios> .
+
+<https://2023.d2r2.aksw.org/#Pavlos%20Fafalios>
+        rdf:type   foaf:Person ;
+        foaf:name  "Pavlos Fafalios" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_6  <https://2023.d2r2.aksw.org/#Andon%20Tchechmedjiev> .
+
+<https://2023.d2r2.aksw.org/#Andon%20Tchechmedjiev>
+        rdf:type   foaf:Person ;
+        foaf:name  "Andon Tchechmedjiev" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_7  <https://2023.d2r2.aksw.org/#Konstantin%20Todorov> .
+
+<https://2023.d2r2.aksw.org/#Konstantin%20Todorov>
+        rdf:type   foaf:Person ;
+        foaf:name  "Konstantin Todorov" .
+
+d2r2p:submissions  schema:subEvent  d2r2p:paper7 .
+
+d2r2p:paper7  rdf:type      schema:Event ;
+        dcterms:title       "Truth or Dare: Investigating Claims Truthfulness with ClaimsKG" ;
+        dcterms:identifier  "paper7" ;
+        schema:performer    d2r2p:paper7-authors .
+
+d2r2p:paper7-authors  rdf:_8  <https://2023.d2r2.aksw.org/#Hajira%20Jabeen> .
+
+<https://2023.d2r2.aksw.org/#Hajira%20Jabeen>
+        rdf:type   foaf:Person ;
+        foaf:name  "Hajira Jabeen" .

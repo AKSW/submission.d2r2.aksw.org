@@ -1,0 +1,320 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ecc-ns: <https://ns.eccenca.com/> .
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
+@prefix orp: <https://www.openresearch.org/wiki/Property:> .
+@prefix aksw: <http://aksw.org/> .
+@prefix dw: <https://dataweek.de/> .
+@prefix gnd: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix lvont: <http://lexvo.org/ontology#> .
+@prefix lexvo: <http://lexvo.org/id/> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix ceur: <https://ceur-ws.org/Vol-XXX/index.html#> .
+@prefix d2r2-23-pc: <https://2023.d2r2.aksw.org/program-committee/#> .
+
+aksw:AntoninDelpeuch
+    a schema:Person, foaf:Person ;
+    foaf:name "Antonin Delpeuch" .
+
+aksw:EdgardMarx
+    a schema:Person, foaf:Person ;
+    foaf:name "Edgard Marx" .
+
+aksw:Group
+    site:small_logo "/images/partner/AKSW_Logo_small.svg" ;
+    a schema:Organization ;
+    rdfs:label "AKSW Research Group" ;
+    foaf:homepage <http://aksw.org/> ;
+    foaf:logo "/images/partner/AKSW_Logo.svg" .
+
+aksw:JuliaHolze
+    schema:affiliation <https://infai.org/> ;
+    schema:memberOf <https://dbpedia.org/> ;
+    a schema:Person, foaf:Document, foaf:Person ;
+    foaf:homepage aksw:JuliaHolze ;
+    foaf:name "Julia Holze" .
+
+aksw:LarsPeterMeyer
+    a schema:Person, foaf:Person ;
+    foaf:name "Lars-Peter Meyer" .
+
+aksw:MarvinHofer
+    a schema:Person, foaf:Person ;
+    foaf:name "Marvin Hofer" .
+
+aksw:MichaelMartin
+    a schema:Person, foaf:Person ;
+    foaf:name "Michael Martin" .
+
+aksw:NatanaelArndt
+    schema:affiliation <https://www.eccenca.com/> ;
+    schema:memberOf aksw:Group ;
+    a schema:Person, foaf:Document, foaf:Person ;
+    skos:prefLabel "Dr. Natanael Arndt" ;
+    foaf:homepage aksw:NatanaelArndt ;
+    foaf:name "Natanael Arndt" ;
+    foaf:title "Dr." .
+
+aksw:NormanRadtke
+    a schema:Person, foaf:Person ;
+    foaf:name "Norman Radtke" .
+
+aksw:PatrickWestphal
+    a schema:Person, foaf:Person ;
+    foaf:name "Patrick Westphal" .
+
+aksw:RicardoUsbeck
+    schema:affiliation <https://www.uni-hamburg.de/> ;
+    schema:memberOf aksw:Group ;
+    a schema:Person, foaf:Document, foaf:Person ;
+    skos:prefLabel "Prof. Dr. Ricardo Usbeck" ;
+    foaf:homepage aksw:RicardoUsbeck ;
+    foaf:name "Ricardo Usbeck" ;
+    foaf:title "Prof. Dr." .
+
+aksw:SabineGruenderFahrer
+    a schema:Person, foaf:Person ;
+    foaf:name "Sabine Gründer-Fahrer" .
+
+aksw:SebastianTramp
+    schema:affiliation <https://www.eccenca.com/> ;
+    schema:memberOf aksw:Group ;
+    a schema:Person, foaf:Document, foaf:Person ;
+    skos:prefLabel "Dr. Sebastian Tramp" ;
+    foaf:homepage aksw:SebastianTramp ;
+    foaf:name "Sebastian Tramp" ;
+    foaf:title "Dr." .
+
+aksw:SimonBin
+    a schema:Person, foaf:Person ;
+    foaf:name "Simon Bin" .
+
+aksw:ClausStadler
+    a schema:Person, foaf:Person ;
+    foaf:name "Claus Stadler" .
+
+aksw:SoerenAuer
+    schema:affiliation <https://www.tib.eu/> ;
+    schema:memberOf <https://www.uni-hannover.de/> ;
+    a schema:Person, foaf:Person ;
+    skos:prefLabel "Prof. Dr. Sören Auer" ;
+    foaf:homepage <https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-digital-libraries/staff/soeren-auer> ;
+    foaf:name "Sören Auer" ;
+    foaf:title "Prof. Dr." .
+
+<http://lexvo.org/id/iso639-3/deu>
+    lvont:iso6392BCode "ger" ;
+    lvont:iso6392TCode "deu" ;
+    lvont:iso639P1Code "de" ;
+    lvont:iso639P3PCode "deu" ;
+    a lvont:Language ;
+    rdfs:label "Deutsch"@de, "German"@en ;
+    skos:prefLabel "German"@en .
+
+<http://lexvo.org/id/iso639-3/eng>
+    lvont:iso6392BCode "eng" ;
+    lvont:iso6392TCode "eng" ;
+    lvont:iso639P1Code "en" ;
+    lvont:iso639P3PCode "eng" ;
+    a lvont:Language ;
+    rdfs:label "Englisch"@de, "English"@en ;
+    skos:prefLabel "English"@en .
+
+<https://2023.d2r2.aksw.org/>
+    dct:date "2023-05-28"^^xsd:date ;
+    schema:organizer <https://2023.d2r2.aksw.org/organizing-committee/> ;
+    schema:subEvent <https://2023.d2r2.aksw.org/#submissions> ;
+    schema:location <https://2023.eswc-conferences.org/conference-venue/> ;
+    vivo:hasProceedings <https://2023.d2r2.aksw.org/#proceedings> ;
+    a bibo:Conference, schema:Event, foaf:Document, <https://vocab.eccenca.com/di/Dataset> ;
+    rdfs:label "Second International Workshop on Linked Data-driven Resilience Research 2023"@de, "Second International Workshop on Linked Data-driven Resilience Research 2023"@en ;
+    foaf:homepage <https://2023.d2r2.aksw.org/> ;
+    ceur:acceptedpapers 7 ;
+    ceur:acceptedregularpapers 6 ;
+    ceur:acceptedshortpapers 1 ;
+    ceur:acronym "D2R2" ;
+    ceur:submittedpapers 11 ;
+    dw:pc <https://2023.d2r2.aksw.org/program-committee/> .
+
+<https://2023.d2r2.aksw.org/#proceedings>
+    dct:dateCopyrighted "2023-05-01"^^xsd:date ;
+    dct:dateSubmitted "2023-05-01"^^xsd:date ;
+    dct:issued "2023-05-01"^^xsd:date ;
+    dct:language <http://lexvo.org/id/iso639-3/eng> ;
+    a bibo:Proceedings, foaf:Document ;
+    ceur:voltitle "Linked Data-driven Resilience Research 2023"@en .
+
+<https://2023.d2r2.aksw.org/#submissions>
+    dct:title "Beiträge"@de, "Submissions"@en ;
+    a schema:Event .
+
+<https://2023.d2r2.aksw.org/call-for-papers/>
+    rdfs:label "Call for Papers"@de, "Call for Papers"@en .
+
+<https://2023.d2r2.aksw.org/organizing-committee/>
+    rdf:_1 aksw:SebastianTramp ;
+    rdf:_2 aksw:RicardoUsbeck ;
+    rdf:_3 aksw:NatanaelArndt ;
+    rdf:_4 aksw:JuliaHolze ;
+    rdf:_5 aksw:SoerenAuer ;
+    rdfs:label "Organizing Commitee"@de, "Organizing Committee"@en .
+
+<https://2023.d2r2.aksw.org/program-committee/>
+    rdf:_1 d2r2-23-pc:AllardOelen ;
+    rdf:_10 d2r2-23-pc:JunboHuang ;
+    rdf:_11 aksw:LarsPeterMeyer ;
+    rdf:_12 d2r2-23-pc:MagnusKnuth ;
+    rdf:_13 d2r2-23-pc:MariaEstherVidal ;
+    rdf:_14 aksw:MarvinHofer ;
+    rdf:_15 aksw:MichaelMartin ;
+    rdf:_16 aksw:NatanaelArndt ;
+    rdf:_17 d2r2-23-pc:NenadKrdavac ;
+    rdf:_18 aksw:NormanRadtke ;
+    rdf:_19 aksw:PatrickWestphal ;
+    rdf:_2 d2r2-23-pc:AngelieKraft ;
+    rdf:_20 aksw:RicardoUsbeck ;
+    rdf:_21 aksw:SabineGruenderFahrer ;
+    rdf:_22 aksw:SebastianTramp ;
+    rdf:_23 aksw:SimonBin ;
+    rdf:_24 aksw:SoerenAuer ;
+    rdf:_3 aksw:AntoninDelpeuch ;
+    rdf:_4 d2r2-23-pc:CedricMoeller ;
+    rdf:_5 aksw:EdgardMarx ;
+    rdf:_6 d2r2-23-pc:EvaHoerster ;
+    rdf:_7 d2r2-23-pc:FelixEngel ;
+    rdf:_8 d2r2-23-pc:IstvanMocsy ;
+    rdf:_9 d2r2-23-pc:JuliaGastinger ;
+    rdfs:label "Program Committee"@en, "Programmkomitee"@de .
+
+d2r2-23-pc:AllardOelen
+    a schema:Person, foaf:Person ;
+    foaf:name "Allard Oelen" .
+
+d2r2-23-pc:AngelieKraft
+    a schema:Person, foaf:Person ;
+    foaf:name "Angelie Kraft" .
+
+d2r2-23-pc:CedricMoeller
+    a schema:Person, foaf:Person ;
+    foaf:name "Cedric Möller" .
+
+d2r2-23-pc:EvaHoerster
+    a schema:Person, foaf:Person ;
+    foaf:name "Eva Hoerster" .
+
+d2r2-23-pc:FelixEngel
+    a schema:Person, foaf:Person ;
+    foaf:name "Felix Engel" .
+
+d2r2-23-pc:IstvanMocsy
+    a schema:Person, foaf:Person ;
+    foaf:name "Istvan J. Mocsy" .
+
+d2r2-23-pc:JuliaGastinger
+    a schema:Person, foaf:Person ;
+    foaf:name "Julia Gastinger" .
+
+d2r2-23-pc:JunboHuang
+    a schema:Person, foaf:Person ;
+    foaf:name "Junbo Huang" .
+
+d2r2-23-pc:MagnusKnuth
+    a schema:Person, foaf:Person ;
+    foaf:name "Magnus Knuth" .
+
+d2r2-23-pc:MariaEstherVidal
+    a schema:Person, foaf:Person ;
+    foaf:name "Maria-Esther Vidal" .
+
+d2r2-23-pc:NenadKrdavac
+    a schema:Person, foaf:Person ;
+    foaf:name "Nenad Krdavac" .
+
+<https://2023.eswc-conferences.org/conference-venue/>
+    schema:addressCountry "Greece" ;
+    schema:addressLocality "Hersonissos" ;
+    a schema:PostalAddress, foaf:Document ;
+    rdfs:label "Venue"@en, "Veranstaltungsort"@de .
+
+<https://2023.eswc-conferences.org/>
+    schema:endDate "2023-05-28"^^xsd:date ;
+    schema:location <https://2023.eswc-conferences.org/conference-venue/> ;
+    schema:startDate "2023-06-01"^^xsd:date ;
+    schema:subEvent <https://2023.d2r2.aksw.org/> ;
+    a <http://rdfs.org/ns/void#Dataset>, schema:Event ;
+    rdfs:label "Extended Semantic Web Conference 2023" ;
+    ceur:acronym "ESWC 2023" .
+
+<https://infai.org/>
+    schema:location <https://infai.org/#address> ;
+    a schema:Organization, foaf:Document, foaf:Organization ;
+    rdfs:label "Institut für Angewandte Informatik e.V."@de, "Institute for Applied Informatics"@en ;
+    foaf:homepage <https://infai.org/> ;
+    foaf:logo "/images/partner/InfAI_small.svg" .
+
+<https://infai.org/#address>
+    schema:addressCountry "Germany" ;
+    schema:addressLocality "Leipzig" ;
+    schema:postalCode "04109" ;
+    schema:streetAddress "Goerdelerring 9" ;
+    a schema:PostalAddress .
+
+<https://www.eccenca.com/>
+    schema:location <https://www.eccenca.com/#address> ;
+    a schema:Organization, foaf:Document, foaf:Organization ;
+    rdfs:label "eccenca GmbH", "eccenca GmbH"@de, "eccenca GmbH"@en ;
+    foaf:homepage <https://www.eccenca.com/> ;
+    foaf:logo dw:LogoEccenca .
+
+<https://www.eccenca.com/#address>
+    schema:addressCountry "Germany" ;
+    schema:addressLocality "Leipzig" ;
+    schema:postalCode "04109" ;
+    schema:streetAddress " Hainstraße 8" ;
+    a schema:PostalAddress .
+
+<https://dbpedia.org/>
+    a schema:Organization ;
+    rdfs:label "DBpedia Association" ;
+    foaf:homepage <https://dbpedia.org/> .
+
+<https://www.tib.eu/>
+    a foaf:Document, foaf:Organization ;
+    rdfs:label "Technische Informationsbibliothek (TIB)"@de, "Technische Informationsbibliothek (TIB)"@en ;
+    schema:location <https://www.tib.eu/#address> ;
+    foaf:homepage <https://www.tib.eu/> .
+
+<https://www.uni-hannover.de/>
+    a foaf:Document, foaf:Organization ;
+    rdfs:label "Gottfried Wilhelm Leibniz Universität Hannover"@de, "Gottfried Wilhelm Leibniz University Hannover"@en ;
+    foaf:homepage <https://www.uni-hannover.de/> .
+
+<https://www.tib.eu/#address>
+    schema:addressCountry "Germany" ;
+    schema:addressLocality "Hannover" ;
+    schema:postalCode "30167" ;
+    schema:streetAddress "Welfengarten 1 B" ;
+    a schema:PostalAddress .
+
+<https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-digital-libraries/staff/soeren-auer>
+    a foaf:Document .
+
+<https://www.uni-hamburg.de/>
+    a foaf:Organization ;
+    rdfs:label "University of Hamburg"@de, "University of Hamburg"@en ;
+    schema:location <https://www.uni-hamburg.de/#address> ;
+    foaf:homepage <https://www.uni-hamburg.de> .
+
+<https://www.uni-hamburg.de/#address>
+    schema:addressCountry "Germany" ;
+    schema:addressLocality "Hamburg" ;
+    schema:postalCode "20148" ;
+    schema:streetAddress "Mittelweg 177" ;
+    a schema:PostalAddress .
