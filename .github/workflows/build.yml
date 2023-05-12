@@ -32,7 +32,7 @@ jobs:
   submission-package:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     steps:
     - uses: arduino/setup-task@v1
@@ -55,9 +55,10 @@ jobs:
     - name: Patch page with papers
       run: |
         ls -la
-        cp CEUR/Package/D2R2-23/* index/_site/Vol-XXX/
+        cp -r index/_site/ _site
+        cp CEUR/Package/D2R2-23/* _site/Vol-XXX
     - name: Deploy 🚀
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./index/_site/
+        publish_dir: ./_site/
