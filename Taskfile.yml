@@ -15,6 +15,7 @@ tasks:
     - task: paper-data:convert
     - task: index:clone
     - task: index:build
+    - task: index:patch-editors
     - |
       declare -A paper_id
       paper_id["Preface"]="preface"
@@ -82,6 +83,15 @@ tasks:
     vars:
       BASE_IRI: '{{.BASE_IRI}}'
 
+  index:patch-editors:
+    desc: Patch the manual editors section into the index.html
+    cmds:
+      - |
+        head -n 56 index/_site/Vol-XXX/index.html > output.html
+        cat editor_section.html >> output.html
+        tail -n +88 index/_site/Vol-XXX/index.html >> output.html
+        mv output.html index/_site/Vol-XXX/index.html
+
   index:clone:
     desc: Get the sources of the jekyll rdf template
     cmds:
@@ -93,6 +103,7 @@ tasks:
     cmds:
       - task: index:clone
       - task: index:build
+      - task: index:patch-editors
       - cp index/_site/Vol-XXX/index.html index.html
 
   to-sign:
