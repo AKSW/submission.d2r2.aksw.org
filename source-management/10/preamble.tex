@@ -1,0 +1,86 @@
+%\usepackage[scale=MatchLowercase]{cascadia-code}
+%\DeclareFontSeriesDefault[tt]{md}{sl}
+%\DeclareFontSeriesDefault[tt]{bf}{r}
+%\usepackage[zerostyle=d,scaled=.94]{newtxtt}
+%\usepackage{notocondensed-mono}
+\usepackage{svg}
+\usepackage[scaled=.8,nomap]{FiraMono}
+\usepackage{minted}
+%\usepackage{cprotect}
+\usemintedstyle{friendly}
+\usepackage{listings}
+\usepackage{hyperref}
+%\usepackage{microtype}
+\lstset{basicstyle=\ttfamily}
+\lstdefinestyle{default}{
+  float=tp,
+  floatplacement=tbp
+}
+\lstdefinelanguage{SPARQL}
+{
+  morekeywords={PREFIX,CONSTRUCT,SELECT,GRAPH,OPTIONAL,UNION,FROM,DISTINCT,WHERE,FILTER,GROUP,ORDER,%
+  LIMIT,BY,IN,AS,SERVICE,BIND,count,geof:aggUnion,geof:collect,geof:lineMerge,geof:lineMerge,.,;,\,},
+  alsoletter={:,.,;,\,},
+  %otherkeywords={?,*,+},
+  emph={url:text,spatial:intersectBoxGeom,spatial:withinBoxGeom,json:unnest,xml:unnest,%
+  spatial:nearbyGeom,xml:parse},
+  %emphstyle={\bfseries\itshape},
+  emphstyle={\bfseries\slshape},
+  emph={[2]strdt,json:path,iri,concat,geof:lineMerge,spatialF:transformSRS,geof:buffer,%
+  spatialF:transformSRS,geof:sfIntersects,geof:simplifyDp,if,str,spatialF:transformDatatype,json:js,%
+  coalesce,replace,sys:getenv,xml:path},
+  emphstyle={[2]\itshape},
+  sensitive=true, % keywords are not case-sensitive
+  morecomment=[l]{\#}, % l is for line comment
+  moredelim=[s][]{<}{>},
+  %morecomment=[s][]{<}{>},
+  morestring=[b]", % defines that strings are enclosed in double quotes
+  %morestring=[b]', % defines that strings are enclosed in single quotes
+  showstringspaces=false,
+}
+\newcommand\verbsparql[1]{\lstinline[keepspaces=true,language=SPARQL]{#1}}
+% \makeatletter
+% % improved URL link typesetting
+% \def\UrlBreaks{\do\.\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]%no @
+%  \do\)\do\,\do\?\do\'\do+\do\=\do\#}%
+% \def\UrlBigBreaks{\do\/\do@url@hyp}%add /
+% \def\UrlSpecials{\do\/{\Url@slash}\do\ {\Url@space}\do\%{\Url@percent}\do\^^M{\Url@space}%
+%    \Url@force@Tilde}%
+% \def\Url@slash{\@ifnextchar/{\mathchar47\kern-.11em}%
+%    {\mathchar47\penalty\UrlBigBreakPenalty}}
+% \makeatother
+
+\usepackage{caption}
+\newenvironment{mintedlisting}{\captionsetup{type=lstlisting}}{}
+\captionsetup[lstlisting]{singlelinecheck=false,font={small,sf},labelfont=bf}
+\usepackage{cleveref}
+
+\usepackage[base,ngerman,british]{babel}
+\hyphenation{RDF-isation RDF-ised Geo-YASGUI}
+
+\usepackage{relsize}
+\newcommand{\CoyPu}{\textsc{\textsl{{\larger C\kern-1pt}oyPu}}\xspace}
+
+\usepackage[]{todonotes}\setuptodonotes{inline}
+\usepackage{fnpct}
+\usepackage{awesomebox}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\newcommand{\infobox}[1]{%
+  \awesomebox{0pt}{\raisebox{3mm}{\small\faInfo}}{gray}{{\small #1}}}
+\newcommand{\infoboxcont}[1]{%
+  \awesomebox{0pt}{\raisebox{3mm}{\small\!}}{gray}{{\small #1}}}
+\newcommand{\lurl}[1]{\guilsinglleft\url{#1}\guilsinglright}
+\usepackage{alphalph}
+% \deffootnote{1.3ex}{0pt}{%
+% \textsuperscript{\thefootnotemark}%
+% }
+\usepackage[export]{adjustbox}
+\newcounter{prodtable}
+\renewcommand{\theprodtable}{\alph{prodtable}}
+\newcommand{\gmark}[1]{\refstepcounter{prodtable}\label{gtab:#1}\hyperlink{gtab:#1}{\textsuperscript{\theprodtable}}}
+\newcommand{\gtarget}[1]{\hypertarget{gtab:#1}{\ref{gtab:#1}}}
+\newcommand{\new}{\textsuperscript{+}}
+\newcommand{\old}{\makebox[\widthof{\new}]{}}
+% \usepackage{lastpage}
+% \renewcommand{\lastpage}{\pageref{LastPage}}
