@@ -52,15 +52,12 @@ jobs:
       with:
         name: Pipeline artifacts
         path: CEUR/Package/*.zip
-    - name: Patch page with papers
+    - name: Patch page folder with papers
       if: github.event_name != 'pull_request'
-      run: |
-        ls -la
-        cp -r index/_site/ _site
-        cp CEUR/Package/D2R2-23/* _site/Vol-XXX
+      run: cp CEUR/Package/D2R2-23/* index/_site/Vol-XXX/
     - name: Deploy 🚀
       if: github.event_name != 'pull_request'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site/
+        publish_dir: ./index/_site/
