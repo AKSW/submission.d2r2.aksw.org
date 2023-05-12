@@ -8,6 +8,10 @@ vars:
   WORKING_DIRECTORY: '{{.PWD}}'
   TARGET: _site
   BUILD_WATCH_FILES: find . -name '*' -not -path "./.git/*" -not -path "./.git" -not -path "./.jekyll-cache/*" -not -path "./.jekyll-cache"
+  ID_UID:
+    sh: id -u
+  ID_GID:
+    sh: id -g
 
 tasks:
   sources:get-vol-xxx:
@@ -36,6 +40,11 @@ tasks:
 
   build:
     desc: Build the site locally
+    vars:
+      JEKYLL_UID: '{{.JEKYLL_UID | default .ID_UID}}'
+      JEKYLL_GID: '{{.JEKYLL_GID | default .ID_GID}}'
+      JEKYLL_USER_ARG:
+        sh: '[ "$(docker info --format "{{`{{if .Host.Security.Rootless}}true{{end}}`}}")" = "true" ] || echo -u "{{.JEKYLL_UID}}:{{.JEKYLL_GID}}"'
     cmds:
       - |
         docker run --rm \

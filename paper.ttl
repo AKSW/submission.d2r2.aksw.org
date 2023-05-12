@@ -347,7 +347,7 @@ d2r2p:paper5-authors  rdf:_3  <https://2023.d2r2.aksw.org/#Sarah%20Detzler> .
 d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
 
 d2r2p:paper6  rdf:type      schema:Event ;
-        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:title       "Base Platform for Knowledge Graphs With Free Software" ;
         dcterms:identifier  "paper6" ;
         schema:performer    d2r2p:paper6-authors .
 
@@ -359,7 +359,7 @@ aksw:SimonBin  rdf:type  foaf:Person ;
 d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
 
 d2r2p:paper6  rdf:type      schema:Event ;
-        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:title       "Base Platform for Knowledge Graphs With Free Software" ;
         dcterms:identifier  "paper6" ;
         schema:performer    d2r2p:paper6-authors .
 
@@ -371,7 +371,7 @@ aksw:ClausStadler  rdf:type  foaf:Person ;
 d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
 
 d2r2p:paper6  rdf:type      schema:Event ;
-        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:title       "Base Platform for Knowledge Graphs With Free Software" ;
         dcterms:identifier  "paper6" ;
         schema:performer    d2r2p:paper6-authors .
 
@@ -383,7 +383,7 @@ aksw:NormanRadtke  rdf:type  foaf:Person ;
 d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
 
 d2r2p:paper6  rdf:type      schema:Event ;
-        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:title       "Base Platform for Knowledge Graphs With Free Software" ;
         dcterms:identifier  "paper6" ;
         schema:performer    d2r2p:paper6-authors .
 
@@ -396,7 +396,7 @@ d2r2p:paper6-authors  rdf:_4  <https://2023.d2r2.aksw.org/#Kurt%20Junghanns> .
 d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
 
 d2r2p:paper6  rdf:type      schema:Event ;
-        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:title       "Base Platform for Knowledge Graphs With Free Software" ;
         dcterms:identifier  "paper6" ;
         schema:performer    d2r2p:paper6-authors .
 
@@ -409,7 +409,7 @@ aksw:SabineGruenderFahrer
 d2r2p:submissions  schema:subEvent  d2r2p:paper6 .
 
 d2r2p:paper6  rdf:type      schema:Event ;
-        dcterms:title       "Base platform for knowledge graphs with free software" ;
+        dcterms:title       "Base Platform for Knowledge Graphs With Free Software" ;
         dcterms:identifier  "paper6" ;
         schema:performer    d2r2p:paper6-authors .
 
