@@ -370,9 +370,9 @@ d2r2p:paper7-authors
     rdf:_8 <https://2023.d2r2.aksw.org/#Hajira%20Jabeen> .
 
 d2r2p:proceedings
-    dct:dateCopyrighted "2023-05-01"^^xsd:date ;
-    dct:dateSubmitted "2023-05-01"^^xsd:date ;
-    dct:issued "2023-05-01"^^xsd:date ;
+    dct:dateCopyrighted "2023-05-19"^^xsd:date ;
+    dct:dateSubmitted "2023-05-19"^^xsd:date ;
+    dct:issued "2023-05-19"^^xsd:date ;
     dct:language <http://lexvo.org/id/iso639-3/eng> ;
     a bibo:Proceedings, foaf:Document ;
     ceur:voltitle "Linked Data-driven Resilience Research 2023"@en .
@@ -465,9 +465,9 @@ d2r2-23-pc:NenadKrdavac
     foaf:name "Nenad Krdavac" .
 
 <https://2023.eswc-conferences.org/>
-    schema:endDate "2023-05-28"^^xsd:date ;
+    schema:endDate "2023-06-01"^^xsd:date ;
     schema:location <https://2023.eswc-conferences.org/conference-venue/> ;
-    schema:startDate "2023-06-01"^^xsd:date ;
+    schema:startDate "2023-05-28"^^xsd:date ;
     schema:subEvent <https://2023.d2r2.aksw.org/> ;
     a <http://rdfs.org/ns/void#Dataset>, schema:Event ;
     rdfs:label "Extended Semantic Web Conference 2023" ;
