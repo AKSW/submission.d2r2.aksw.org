@@ -29,6 +29,7 @@ tasks:
 
       mkdir -p {{.package}}/AGREEMENTS-{{.workshop}}/
       cp agreement-form/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
+      cp agreement-form/Preface/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-preface.pdf || touch {{.package}}/AGREEM0ENTS-{{.workshop}}/AUTHOR-AGREEMENT-preface-is-missing.pdf
       for submission_id in {{.submission_ids}}
       do
         cp agreement-form/$submission_id/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}-is-missing.pdf
@@ -109,6 +110,7 @@ tasks:
   to-sign:
     - |
       mkdir -p to-sign/
+      cp agreement-form/Preface/agreement_to_sign.pdf to-sign/agreement_to_sign_preface.pdf || true
       for submission_id in {{.submission_ids}}
       do
         cp agreement-form/$submission_id/agreement_to_sign.pdf to-sign/agreement_to_sign_${submission_id}.pdf || true
