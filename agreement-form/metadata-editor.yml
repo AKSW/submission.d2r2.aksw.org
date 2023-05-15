@@ -1,0 +1,19 @@
+paper01:
+  title: "Your Title: special research on your topic"
+  authors:
+    - name: Author One
+    - name: Author Two
+    - name: Your Name
+  corresponding_author:
+    name: Your Name
+    email: you@institution.org
+    affiliation: Your Affiliation
+    address: Your insitutional address
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
+    corresponding_editor:
+      name: Natanael Arndt
+      email: natanael.arndt@eccenca.com
+      affiliation: eccenca GmbH
+      address: Hainstraße 8, 04109 Leipzig
