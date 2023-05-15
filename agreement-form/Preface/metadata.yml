@@ -1,0 +1,16 @@
+paper01:
+  title: "Second International Workshop on Linked Data-driven Resilience Research 2023"
+  authors:
+    - name: Sebastian Tramp
+    - name: Ricardo Usbeck
+    - name: Natanael Arndt
+    - name: Julia Holze
+    - name: Sören Auer
+  corresponding_author:
+    name: Sebastian Tramp
+    email: sebastian.tramp@eccenca.com
+    affiliation: eccenca GmbH
+    address: Hainstraße 8, 04109 Leipzig
+  event:
+    title: Second International Workshop on Linked Data-driven Resilience Research 2023
+    editors: Sebastian Tramp, Ricardo Usbeck, Natanael Arndt, Julia Holze, and Sören Auer
