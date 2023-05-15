@@ -308,7 +308,7 @@ d2r2p:paper4-authors  rdf:_5  <https://2023.d2r2.aksw.org/#Omar%20Khadeer%20Huss
 d2r2p:submissions  schema:subEvent  d2r2p:paper5 .
 
 d2r2p:paper5  rdf:type      schema:Event ;
-        dcterms:title       "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+        dcterms:title       "Wildfire Prediction Using Spatio-Temporal Knowledge Graphs" ;
         dcterms:identifier  "paper5" ;
         schema:performer    d2r2p:paper5-authors .
 
@@ -321,7 +321,7 @@ d2r2p:paper5-authors  rdf:_1  <https://2023.d2r2.aksw.org/#Martin%20B%C3%B6cklin
 d2r2p:submissions  schema:subEvent  d2r2p:paper5 .
 
 d2r2p:paper5  rdf:type      schema:Event ;
-        dcterms:title       "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+        dcterms:title       "Wildfire Prediction Using Spatio-Temporal Knowledge Graphs" ;
         dcterms:identifier  "paper5" ;
         schema:performer    d2r2p:paper5-authors .
 
@@ -334,7 +334,7 @@ d2r2p:paper5-authors  rdf:_2  <https://2023.d2r2.aksw.org/#Heiko%20Paulheim> .
 d2r2p:submissions  schema:subEvent  d2r2p:paper5 .
 
 d2r2p:paper5  rdf:type      schema:Event ;
-        dcterms:title       "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+        dcterms:title       "Wildfire Prediction Using Spatio-Temporal Knowledge Graphs" ;
         dcterms:identifier  "paper5" ;
         schema:performer    d2r2p:paper5-authors .
 

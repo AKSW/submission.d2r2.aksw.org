@@ -330,7 +330,7 @@ d2r2p:paper4-authors
 
 d2r2p:paper5
     dct:identifier "paper5" ;
-    dct:title "Wildfire Prediction using Spatio-Temporal Knowledge Graphs" ;
+    dct:title "Wildfire Prediction Using Spatio-Temporal Knowledge Graphs" ;
     schema:performer d2r2p:paper5-authors ;
     a schema:Event .
 
