@@ -18,7 +18,7 @@ TODO: make sure finally all boxes are ticked
 - [ ] Created directory `source-management/SUB_NUMBER`
 - [ ] Added paper sources to `source-management/SUB_NUMBER`
 - [ ] Verify, the main tex file is called `source-management/SUB_NUMBER/main.tex`
-- [ ] Verify, the title is properly capitalized according to APA style: https://capitalizemytitle.com/
+- [ ] Verify, the title is properly capitalized according to "Chicago" style: https://capitalizemytitle.com/
 - [ ] Verify, the following correct conference line
 
 ```
