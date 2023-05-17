@@ -277,7 +277,7 @@ d2r2p:paper1
     dct:identifier "paper1" ;
     dct:title "From Data to Insights: Constructing Spatiotemporal Knowledge Graphs for City Resilience Use Cases" ;
     schema:performer d2r2p:paper1-authors ;
-    a schema:Event .
+    a schema:Event, <../#ShortPaper> .
 
 d2r2p:paper1-authors
     rdf:_1 <https://2023.d2r2.aksw.org/#Amin%20Anjomshoaa> ;

@@ -18,6 +18,7 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix ceur: <https://ceur-ws.org/Vol-XXX/index.html#> .
 @prefix d2r2-23-pc: <https://2023.d2r2.aksw.org/program-committee/#> .
+@prefix d2r2p: <https://2023.d2r2.aksw.org/#> .
 
 aksw:AntoninDelpeuch
     a schema:Person, foaf:Person ;
@@ -318,3 +319,5 @@ d2r2-23-pc:NenadKrdavac
     schema:postalCode "20148" ;
     schema:streetAddress "Mittelweg 177" ;
     a schema:PostalAddress .
+
+d2r2p:paper1 a <https://dataweek.de/#ShortPaper> .
