@@ -7,72 +7,95 @@ vars:
   BASE_IRI: https://2023.d2r2.aksw.org/
 
 tasks:
+
   default:
-    - task -a
+    summary: List all tasks
+    silent: true
+    cmds:
+      - task --list
 
   compile:
-    - task: paper-data:join
-    - task: paper-data:convert
-    - task: index:clone
-    - task: index:build
-    - task: index:patch-editors
-    - |
-      declare -A paper_id
-      paper_id["Preface"]="preface"
-      paper_id["2"]="paper1"
-      paper_id["4"]="paper2"
-      paper_id["6"]="paper3"
-      paper_id["8"]="paper4"
-      paper_id["9"]="paper5"
-      paper_id["10"]="paper6"
-      paper_id["11"]="paper7"
+    desc: Compile the final submission archives (requires to run the tasks in source-management before)
+    cmds:
+      - task: paper-data
+      - task: index:clone
+      - task: index:build
+      - task: index:patch-editors
+      - |
+        declare -A paper_id
+        paper_id["Preface"]="preface"
+        paper_id["2"]="paper1"
+        paper_id["4"]="paper2"
+        paper_id["6"]="paper3"
+        paper_id["8"]="paper4"
+        paper_id["9"]="paper5"
+        paper_id["10"]="paper6"
+        paper_id["11"]="paper7"
 
-      mkdir -p {{.package}}/AGREEMENTS-{{.workshop}}/
-      cp agreement-form/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
-      cp agreement-form/Preface/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-preface.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-preface-is-missing.pdf
-      for submission_id in {{.submission_ids}}
-      do
-        cp agreement-form/$submission_id/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}-is-missing.pdf
-      done
-      cd {{.package}}
-      zip -r AGREEMENTS-{{.workshop}}.zip AGREEMENTS-{{.workshop}}
-      cd -
+        mkdir -p {{.package}}/AGREEMENTS-{{.workshop}}/
+        cp agreement-form/EDITOR-AGREEMENT-{{.workshop}}.pdf {{.package}}/AGREEMENTS-{{.workshop}} || touch {{.package}}/AGREEMENTS-{{.workshop}}/EDITOR-AGREEMENT-is-missing.pdf
+        cp agreement-form/Preface/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-preface.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-preface-is-missing.pdf
+        for submission_id in {{.submission_ids}}
+        do
+          cp agreement-form/$submission_id/agreement.pdf {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}.pdf || touch {{.package}}/AGREEMENTS-{{.workshop}}/AUTHOR-AGREEMENT-${paper_id["$submission_id"]}-is-missing.pdf
+        done
+        cd {{.package}}
+        zip -r AGREEMENTS-{{.workshop}}.zip AGREEMENTS-{{.workshop}}
+        cd -
 
-      mkdir -p {{.package}}/{{.workshop}}/
-      cp index/_site/Vol-XXX/index.html {{.package}}/{{.workshop}}/index.html
-      cp source-management/Preface/main.pdf {{.package}}/{{.workshop}}/preface.pdf || echo "skip"
-      for submission_id in {{.submission_ids}}
-      do
-        cp source-management/$submission_id/main.pdf {{.package}}/{{.workshop}}/${paper_id["$submission_id"]}.pdf || echo "skip"
-      done
-      cd {{.package}}
-      zip -r {{.workshop}}.zip {{.workshop}}
-      cd -
+        mkdir -p {{.package}}/{{.workshop}}/
+        cp index/_site/Vol-XXX/index.html {{.package}}/{{.workshop}}/index.html
+        cp source-management/Preface/main.pdf {{.package}}/{{.workshop}}/preface.pdf || echo "skip"
+        for submission_id in {{.submission_ids}}
+        do
+          cp source-management/$submission_id/main.pdf {{.package}}/{{.workshop}}/${paper_id["$submission_id"]}.pdf || echo "skip"
+        done
+        cd {{.package}}
+        zip -r {{.workshop}}.zip {{.workshop}}
+        cd -
 
-  paper-data:join:
-    - |
-      declare -A paper_id
-      paper_id["Preface"]="preface"
-      paper_id["2"]="paper1"
-      paper_id["4"]="paper2"
-      paper_id["6"]="paper3"
-      paper_id["8"]="paper4"
-      paper_id["9"]="paper5"
-      paper_id["10"]="paper6"
-      paper_id["11"]="paper7"
+  clean:
+    desc: Clean some temporary files (not yet all files)
+    cmds:
+      - task: paper-data:clean
 
-      touch metadata.yml
-      for submission_id in {{.submission_ids}}
-      do
-        id=${paper_id["$submission_id"]}
-        echo $id
-        docker run -i --rm docker.io/mikefarah/yq '(keys | .[0]) = "'"${id}"'"' < agreement-form/${submission_id}/metadata.yml >> metadata.yml || true
-      done
-      docker run -i --rm docker.io/mikefarah/yq -o json < metadata.yml > metadata.json
+  paper-data:
+    desc: Join all the metadata of the papers into a graph paper.ttl
+    cmds:
+      - |
+        declare -A paper_id
+        paper_id["Preface"]="preface"
+        paper_id["2"]="paper1"
+        paper_id["4"]="paper2"
+        paper_id["6"]="paper3"
+        paper_id["8"]="paper4"
+        paper_id["9"]="paper5"
+        paper_id["10"]="paper6"
+        paper_id["11"]="paper7"
 
-  paper-data:convert:
-    - |
-      docker run -i --rm -v $PWD:/data docker.io/aksw/rpt integrate /data/event.ttl /data/paper-mapping.rq > paper.ttl
+        touch metadata.yml
+        for submission_id in {{.submission_ids}}
+        do
+          id=${paper_id["$submission_id"]}
+          echo $id
+          docker run -i --rm docker.io/mikefarah/yq '(keys | .[0]) = "'"${id}"'"' < agreement-form/${submission_id}/metadata.yml >> metadata.yml || true
+        done
+        docker run -i --rm docker.io/mikefarah/yq -o json < metadata.yml > metadata.json
+        docker run -i --rm -v $PWD:/data docker.io/aksw/rpt integrate /data/event.ttl /data/paper-mapping.rq > paper.ttl
+
+  paper-data:clean:
+    desc: Clean temporary paper data files
+    cmds:
+      - |
+        rm metadata.json metadata.yml paper.ttl
+
+  index:
+    desc: Prepare index
+    cmds:
+      - task: index:clone
+      - task: index:build
+      - task: index:patch-editors
+      - cp index/_site/Vol-XXX/index.html index.html
 
   index:build:
     desc: Get the sources of the jekyll rdf template
@@ -101,20 +124,14 @@ tasks:
     status:
       - test -f index/_config.yml
 
-  index:
-    desc: Prepare index
-    cmds:
-      - task: index:clone
-      - task: index:build
-      - task: index:patch-editors
-      - cp index/_site/Vol-XXX/index.html index.html
-
   to-sign:
-    - |
-      mkdir -p to-sign/
-      cp agreement-form/editor_agreement_to_sign.pdf to-sign/editor_agreement_to_sign.pdf || true
-      cp agreement-form/Preface/agreement_to_sign.pdf to-sign/agreement_to_sign_preface.pdf || true
-      for submission_id in {{.submission_ids}}
-      do
-        cp agreement-form/$submission_id/agreement_to_sign.pdf to-sign/agreement_to_sign_${submission_id}.pdf || true
-      done
+    desc: Copy all agrreement forms to sign to the to-sign folder
+    cmds:
+      - |
+        mkdir -p to-sign/
+        cp agreement-form/editor_agreement_to_sign.pdf to-sign/editor_agreement_to_sign.pdf || true
+        cp agreement-form/Preface/agreement_to_sign.pdf to-sign/agreement_to_sign_preface.pdf || true
+        for submission_id in {{.submission_ids}}
+        do
+          cp agreement-form/$submission_id/agreement_to_sign.pdf to-sign/agreement_to_sign_${submission_id}.pdf || true
+        done
