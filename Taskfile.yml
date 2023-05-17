@@ -98,6 +98,8 @@ tasks:
     cmds:
       - |
         git clone https://github.com/AKSW/ceur-jekyll-rdf index
+    status:
+      - test -f index/_config.yml
 
   index:
     desc: Prepare index
