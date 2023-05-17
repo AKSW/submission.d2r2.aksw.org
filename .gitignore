@@ -4,3 +4,15 @@ __pycache__
 /metadata.yml
 /paper.ttl
 editor_agreement_to_sign.pdf
+*.abs
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.xmpdata
+*.xmpi
