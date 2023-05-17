@@ -14,7 +14,7 @@ tasks:
         poetry install
 
   build:
-    desc: Batch build all submissions
+    desc: Batch build all agreement forms
     cmds:
       - |
         for submission_id in {{.submission_ids}}
@@ -24,12 +24,21 @@ tasks:
       - task: submission:build
         vars:
           submission_id: Preface
+      - task: editor:build
 
   submission:build:
-    desc: Build an individual submission from sources
+    desc: Build an author agreement form for a submission
     cmds:
       - |
         cd {{.submission_id}}
         poetry run fill_form --metadata metadata.yml --template ../ceur-author-agreement-ccby-ntp.pdf --output agreement_to_sign.pdf
     status:
       - test ! -f {{.submission_id}}/metadata.yml
+
+  editor:build:
+    desc: Build the editor agreement form for the proceedings
+    cmds:
+      - |
+        poetry run fill_form --editor --metadata metadata-editor.yml --template ceur-editor-agreement-ccby.pdf --output editor_agreement_to_sign.pdf
+    status:
+      - test ! -f metadata-editor.yml

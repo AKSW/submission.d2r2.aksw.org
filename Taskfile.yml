@@ -98,6 +98,8 @@ tasks:
     cmds:
       - |
         git clone https://github.com/AKSW/ceur-jekyll-rdf index
+    status:
+      - test -f index/_config.yml
 
   index:
     desc: Prepare index
@@ -110,6 +112,7 @@ tasks:
   to-sign:
     - |
       mkdir -p to-sign/
+      cp agreement-form/editor_agreement_to_sign.pdf to-sign/editor_agreement_to_sign.pdf || true
       cp agreement-form/Preface/agreement_to_sign.pdf to-sign/agreement_to_sign_preface.pdf || true
       for submission_id in {{.submission_ids}}
       do
