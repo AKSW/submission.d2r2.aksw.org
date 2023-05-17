@@ -54,10 +54,16 @@ tasks:
         zip -r {{.workshop}}.zip {{.workshop}}
         cd -
 
+  compile:clean:
+    desc: Remove the compilation pacakges
+    cmds:
+      - rm -r CEUR/Package/*
+
   clean:
     desc: Clean some temporary files (not yet all files)
     cmds:
       - task: paper-data:clean
+      - task: compile:clean
 
   paper-data:
     desc: Join all the metadata of the papers into a graph paper.ttl
