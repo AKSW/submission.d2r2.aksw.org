@@ -341,7 +341,7 @@ d2r2p:paper5-authors
 
 d2r2p:paper6
     dct:identifier "paper6" ;
-    dct:title "Base Platform for Knowledge Graphs With Free Software" ;
+    dct:title "Base Platform for Knowledge Graphs with Free Software" ;
     schema:performer d2r2p:paper6-authors ;
     a schema:Event .
 
