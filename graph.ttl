@@ -370,9 +370,9 @@ d2r2p:paper7-authors
     rdf:_8 <https://2023.d2r2.aksw.org/#Hajira%20Jabeen> .
 
 d2r2p:proceedings
-    dct:dateCopyrighted "2023-05-19"^^xsd:date ;
-    dct:dateSubmitted "2023-05-19"^^xsd:date ;
-    dct:issued "2023-05-19"^^xsd:date ;
+    dct:dateCopyrighted "2023-05-17"^^xsd:date ;
+    dct:dateSubmitted "2023-05-17"^^xsd:date ;
+    dct:issued "2023-05-17"^^xsd:date ;
     dct:language <http://lexvo.org/id/iso639-3/eng> ;
     a bibo:Proceedings, foaf:Document ;
     ceur:voltitle "Linked Data-driven Resilience Research 2023"@en .
