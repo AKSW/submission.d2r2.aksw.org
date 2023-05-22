@@ -3,6 +3,9 @@
 ## Current Workshop
 [D2R2'23: Second International Workshop on Linked Data-driven Resilience Research 2023](https://2023.d2r2.aksw.org/) co-located with the [ESWC 2023](https://2023.eswc-conferences.org/)
 
+- Published at: https://ceur-ws.org/Vol-3401/
+- Preview was: https://aksw.github.io/submission.d2r2.aksw.org/Vol-XXX/
+
 ## Submission Process
 
 **For Authors**
